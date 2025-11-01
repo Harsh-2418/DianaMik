@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | DianaMik Hospital Management Consultancy LLP</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/about/our-team.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+/>
+</head>
+<body>
+<!-- Header -->
+    <header>
+      <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo-container">
+          <a href="/index.html">
+            <img
+              src="/assets/images/dianamik_logo.png"
+              alt="DianaMik Logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Nav Links -->
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a href="/index.html"><b>Home</b></a>
+          </li>
+
+          <li class="dropdown">
+            <a href="/about/about.html"><b>About Us</b><span class="arrow"></span></a>
+            <div class="dropdown-content">
+              <a href="/about/about.html"><b>About DianaMik Consultancy</b></a>
+              <a href="/about/drHardik.html"><b>About Dr. Hardik Barot</b></a>
+              <a href="/about/our-team.html"><b>Team</b> </a>
+            </div>
+          </li>
+
+          <li class="dropdown">
+            <a href="#"><b>Our Expertises</b><span class="arrow"></span></a>
+            <div class="dropdown-content">
+              <a href="#"><b>NABH Accreditation</b></a>
+              <a href="#"><b>Laboratory NABL Accreditation</b></a>
+              <a href="#"><b>TPA & Health Insurance Empanelment</b> </a>
+              <a href="#"><b>Cashless Processing</b> </a>
+              <a href="#"><b>New Hospital Planning & Designing</b></a>
+              <a href="#"><b>Redevelopment of Hospitals</b></a>
+              <a href="#"><b>Govt Scheme Tie-up</b></a>
+              <a href="#"><b>Pharmacy Audit</b> </a>
+              <a href="#"><b>Clinical Trials</b></a>
+            </div>
+          </li>
+
+          <li>
+            <a href="#"><b>Clients</b></a>
+          </li>
+          <li>
+            <a href="#"><b>Blog</b></a>
+          </li>
+          <li>
+            <a href="#"><b>Gallery</b></a>
+          </li>
+          <li>
+            <a href="#"><b>Contact</b></a>
+          </li>
+        </ul>
+
+        <!-- Book Button -->
+        <a href="#" class="book-btn">Book Consultation</a>
+      </nav>
+    </header>
+
+    <!--========== team section ===========-->
+  <section class="team-section">
+    <div class="team-header">
+      <h2 class="reveal">Meet Our Team</h2>
+      <p class="reveal">The dedicated professionals behind DianaMik Hospital Management Consultancy LLP</p>
+    </div>
+
+    <div class="team-container">
+      <div class="team-card reveal">
+        <img src="/assets/images/user.png" alt="Dr Hardik V Barot" />
+        <h3>Dr. Hardik V Barot</h3>
+        <p>Director</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="/assets/images/user.png" alt="Ms. Bharti H Barot" />
+        <h3>Ms. Bharti H Barot</h3>
+        <p>Director</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="/assets/images/user.png" alt="Mr. Kiran Prajapati" />
+        <h3>Mr. Kiran Prajapati</h3>
+        <p>NABH Consultant & Team Leader</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="/assets/images/user.png" alt="Abhitesh Kharwal" />
+        <h3>Abhitesh Kharwal</h3>
+        <p>Manager</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="/assets/images/user.png" alt="Mr. Rahul Patel" />
+        <h3>Mr. Rahul Patel</h3>
+        <p>CEO</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="/assets/images/user.png" alt="Chahat Diwakar" />
+        <h3>Chahat Diwakar</h3>
+        <p>Cashless Processing Head</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="/assets/images/user.png" alt="Mr. Krunal Solanki" />
+        <h3>Mr. Krunal Solanki</h3>
+        <p>Accreditation Coordinator</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="/assets/images/user.png" alt="Mr Vijay Salat" />
+        <h3>Mr. Vijay Salat</h3>
+        <p>Empanelment & Processing Executive</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="/assets/images/user.png" alt="Mahima Indora" />
+        <h3>Mahima Indora</h3>
+        <p>Marketing Executive</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Reveal on scroll animation
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 120;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    });
+  </script>
+      <!-- ========== FOOTER SECTION ========== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <img
+            src="/assets/images/logo-white.png"
+            alt="DianaMik Logo"
+            class="footer-logo"
+          />
+          <p>
+            Expert healthcare consulting services for hospital accreditation,
+            management, and quality improvement.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="expertises.html">Expertises</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-services">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">NABH Accreditation</a></li>
+            <li><a href="#">JCI Accreditation</a></li>
+            <li><a href="#">Quality Management</a></li>
+            <li><a href="#">Training & Development</a></li>
+            <li><a href="#">Risk Management</a></li>
+            <li><a href="#">Hospital Planning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-phone-alt"></i> +91 99131 34461</li>
+            <li><i class="fas fa-envelope"></i> info@dianamik.com</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              4th Floor, Nakshatra Arcade, IOC Rd, Chandkheda, Ahmedabad,
+              Gujarat 382424
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2025 DianaMik Hospital Management Consultancy LLP. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/919913134461"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat on WhatsApp"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+      />
+    </a>
+
+</body>
+</html>
+
+
+
+
+

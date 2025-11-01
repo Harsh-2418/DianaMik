@@ -1,0 +1,223 @@
+/* ========== TEAM SECTION ========== */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.team-section {
+  background: linear-gradient(to bottom, #0070c0, #005b9f);
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.team-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.team-header p {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #d9e6ff;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 992px) {
+  .team-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .team-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.team-card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  color: #222;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #005b9f;
+}
+
+.team-card h3 {
+  color: #005b9f;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.team-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0;
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== FOOTER FIX (logos visible) ========== */
+.footer {
+  background-color: #061b3d;
+  color: #fff;
+  padding: 60px 20px 30px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.footer-about p {
+  color: #cfd8ff;
+  line-height: 1.6;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #0a2a6e;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #fff;
+  color: #0a2a6e;
+}
+
+.footer-links ul,
+.footer-services ul,
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li,
+.footer-services li,
+.footer-contact li {
+  margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-services a {
+  color: #cfd8ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover,
+.footer-services a:hover {
+  color: #ffffff;
+}
+
+.footer h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.footer h4::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #ff6600;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #1e3a66;
+  margin-top: 40px;
+  padding-top: 20px;
+  color: #cfd8ff;
+  font-size: 0.9rem;
+}
+
+/* WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .team-header h2 {
+    font-size: 2rem;
+  }
+  .team-header p {
+    font-size: 1rem;
+  }
+}

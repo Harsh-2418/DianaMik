@@ -1,0 +1,125 @@
+/* About Section */
+.about-section {
+  background: linear-gradient(to right, #ffffff, #eaf3fa);
+  padding: 100px 0;
+  color: #002147; /* navy blue tone matching your site */
+}
+
+.about-container {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 320px;
+}
+
+.about-text h2 {
+  font-size: 2.4rem;
+  color: #002147;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about-text h2 span {
+  color: #f36b21; /* orange tone from logo */
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+/* Vision & Mission Section */
+.vision-mission-section {
+  text-align: center;
+  background: linear-gradient(to right, #ffffff, #eaf3fa);
+  padding: 100px 0;
+  color: #002147;
+}
+
+.vision-mission-section h2 {
+  font-size: 2.4rem;
+  color: #002147;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.vision-mission-section h2 span {
+  color: #f36b21; /* orange accent */
+}
+
+.vision-mission-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.vision-box,
+.mission-box {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: #ffffff;
+  border: 2px solid #e1eaf4;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  transition: all 0.4s ease;
+}
+
+.vision-box:hover,
+.mission-box:hover {
+  transform: translateY(-8px);
+  border-color: #f36b21;
+  box-shadow: 0 8px 25px rgba(243, 107, 33, 0.2);
+}
+
+.vision-box h3,
+.mission-box h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #002147;
+  position: relative;
+}
+
+.vision-box p,
+.mission-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Add spacing before footer */
+footer {
+  margin-top: 100px;
+}
