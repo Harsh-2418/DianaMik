@@ -663,7 +663,8 @@ header {
   .expertise-container {
     gap: 25px;
   }
-} /* ============================= */ /* OUR EXPERTISE SECTION STYLING */ /* ============================= */
+} 
+/* ============================= */ /* OUR EXPERTISE SECTION STYLING */ /* ============================= */
 .expertise-section {
   background: #fff;
   font-family: "Poppins", sans-serif;
@@ -752,16 +753,20 @@ header {
   background: #2663eb;
   transform: translateY(-2px);
 } /* Scroll Animation */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
 [data-animate].show {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.8s ease-out;
 }
 
 /*----stats section----*/
 .stats-section {
   position: relative;
-  background: url("images/stats-bg.jpg") center/cover no-repeat;
+  background: none;
   color: #fff;
   text-align: center;
   padding: 80px 20px;

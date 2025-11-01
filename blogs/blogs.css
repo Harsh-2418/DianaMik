@@ -3,6 +3,21 @@
   background: linear-gradient(180deg, #f2f6ff 0%, #ffffff 100%);
   text-align: center;
   padding: 80px 20px 60px;
+
+  /* Centering fix */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Disable unwanted animation */
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  position: relative;
+  left: 0 !important;
+  top: 0 !important;
 }
 
 .blog-hero h1 {
@@ -11,12 +26,30 @@
   color: #000;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+
+  /* Lock to center & disable animation */
+  text-align: center;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  position: relative;
+  left: 0 !important;
 }
 
 .blog-hero p {
   font-size: 1.1rem;
   color: #444;
   margin-top: 10px;
+
+  /* Keep centered and static */
+  text-align: center;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  position: relative;
+  left: 0 !important;
 }
 
 /* Blog Section */
@@ -111,4 +144,20 @@
   .blog-section {
     padding: 40px 5%;
   }
+}
+/* Disable unwanted fade animation from global CSS */
+body.blog-page {
+  animation: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+.blog-hero,
+.blog-hero * {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  left: 0 !important;
+  top: 0 !important;
+  position: relative;
 }
