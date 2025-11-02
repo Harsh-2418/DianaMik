@@ -1,5 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+  // ===== MOBILE MENU TOGGLE =====
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuToggle.classList.toggle("open");
+    });
+  }
+
+  // ===== DROPDOWN MENU TOGGLE =====
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      const dropdown = toggle.nextElementSibling;
+
+      // Toggle only this dropdown
+      if (dropdown.classList.contains("show")) {
+        dropdown.classList.remove("show");
+      } else {
+        document.querySelectorAll(".dropdown-menu").forEach((menu) =>
+          menu.classList.remove("show")
+        );
+        dropdown.classList.add("show");
+      }
+    });
+  });
+});
+
+
   // ===== HERO SLIDER WITH CONTROLS =====
   {
     const slides = document.querySelectorAll(".hero .slide");
@@ -147,21 +180,22 @@ if (document.querySelector("#stats")) {
   let triggered = false;
 
   const animateCounters = () => {
+    const interval = 30; // ms between updates (keeps smoothness similar to your original)
     counters.forEach(counter => {
       const target = +counter.getAttribute("data-target");
-      let speed;
 
-      if (target <= 10) speed = 70;
-      else if (target <= 30) speed = 180;
-      else if (target <= 70) speed = 60;
-      else speed = 40;
+      // Duration inversely proportional to the target so larger targets finish faster.
+      // Clamped to reasonable min/max to keep animation visible and smooth.
+      const duration = Math.max(600, Math.round(3000 * (30 / Math.max(target, 1))));
+      const steps = Math.max(1, Math.round(duration / interval));
+      const increment = target / steps;
 
       const updateCount = () => {
-        const count = +counter.innerText;
-        const increment = target / speed;
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 30);
+        const current = +counter.innerText;
+        if (current < target) {
+          const next = Math.ceil(current + increment);
+          counter.innerText = next > target ? target : next;
+          setTimeout(updateCount, interval);
         } else {
           counter.innerText = target;
         }
@@ -171,6 +205,15 @@ if (document.querySelector("#stats")) {
   };
 
   window.addEventListener("scroll", () => {
+    const sectionTop = section.offsetTop - window.innerHeight + 200;
+    if (!triggered && window.scrollY > sectionTop) {
+      animateCounters();
+      triggered = true;
+    }
+  });
+
+  // Also try to trigger if already in view on load (handy for short pages)
+  window.addEventListener("load", () => {
     const sectionTop = section.offsetTop - window.innerHeight + 200;
     if (!triggered && window.scrollY > sectionTop) {
       animateCounters();

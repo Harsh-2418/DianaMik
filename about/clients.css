@@ -51,15 +51,16 @@
 
 /* --- Image Styling --- */
 .column img {
-  width: 150px;
-  height: 80px;
-  object-fit: contain;
+  width: 140px;  
+  height: auto;  
+  object-fit: contain; 
   background: #fff;
-  border-radius: 15px;
+  border-radius: 18px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 15px;
+  padding: 1px;
   transition: transform 0.3s ease;
 }
+
 
 .column img:hover {
   transform: scale(1.05);
