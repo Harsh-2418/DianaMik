@@ -14,77 +14,50 @@
   </head>
   <body>
     <!-- Header -->
-  <header>
+  .menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
 
-   <div class="top-navbar">
-  <div class="top-container">
-    <div class="top-right">
-      <a href="https://wa.me/919913134461" target="_blank" class="top-item">
-        <i class="fas fa-phone"></i> +91 9913134461
-      </a>
-      <span class="separator">|</span>
-      <a href="mailto:info@dianamik.com" class="top-item">
-        <i class="fas fa-envelope"></i> info@dianamik.com
-      </a>
-    </div>
-  </div>
-</div>
-
-    <nav class="navbar">
-      <!-- Logo -->
-      <div class="logo-container">
-        <a href="/index.html">
-          <img src="/assets/images/dianamik_logo.png" alt="DianaMik Logo" class="logo-img" />
-        </a>
-      </div>
-
-      <!-- Hamburger Icon -->
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- Nav Links -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="/index.html"><b>Home</b></a></li>
-
-        <li class="dropdown">
-          <a href="#"><b>About Us</b><span class="arrow"></span></a>
-          <div class="dropdown-content">
-            <a href="/about/about.html"><b>About DianaMik Consultancy</b></a>
-            <a href="/about/drHardik.html"><b>About Dr. Hardik Barot</b></a>
-            <a href="/about/our-team.html"><b>Team</b> </a>
-          </div>
-        </li>
-
-        <li class="dropdown">
-          <a href="#"><b>Our Expertises</b><span class="arrow"></span></a>
-          <div class="dropdown-content">
-            <a href="#"><b>Hospital Planning, Design and Redevelopment</b></a>
-            <a href="#"><b>NABH Accreditation and Certification</b></a>
-            <a href="#"><b>NABL Accreditation and Certification</b> </a>
-            <a href="#"><b>JCI Accreditation and Certfication</b> </a>
-            <a href="#"><b>TPA and Health Inssurance Empanelment</b></a>
-            <a href="#"><b>Hospital Cashless Processing</b></a>
-            <a href="#"><b>Government Scheme Tie-Up</b></a>
-            <a href="#"><b>Pharmacy P&L Audit and Vigilance </b> </a>
-            <a href="#"><b>Medigo Legal Consulting</b></a>
-            <a href="#"><b>Hospital Clinical Trial</b></a>
-          </div>
-        </li>
-
-        <li><a href="/about/clients.html"><b>Clients</b></a></li>
-        <li><a href="/blogs/blogs.html"><b>Blog</b></a></li>
-        <li><a href="#"><b>Gallery</b></a></li>
-      </ul>
-
-      <!-- Book Button -->
-      <a href="contact.html" class="book-btn">Send Us an Inquiry</a>
-    </nav>
-
-
-  </header>
     <script src="include.js"></script>
+
+      <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+  // ===== MOBILE MENU TOGGLE =====
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuToggle.classList.toggle("open");
+    });
+  }
+
+  // ===== DROPDOWN MENU TOGGLE =====
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      const dropdown = toggle.nextElementSibling;
+
+      // Toggle only this dropdown
+      if (dropdown.classList.contains("show")) {
+        dropdown.classList.remove("show");
+      } else {
+        document.querySelectorAll(".dropdown-menu").forEach((menu) =>
+          menu.classList.remove("show")
+        );
+        dropdown.classList.add("show");
+      }
+    });
+  });
+});
+</script>
   </body>
 </html>
