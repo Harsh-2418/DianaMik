@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
+  // ===== MOBILE MENU TOGGLE =====
   if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("show");
@@ -11,19 +13,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Dropdown toggle logic
-  document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
-    toggle.addEventListener("click", function (e) {
+  // ===== DROPDOWN MENU TOGGLE =====
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
       e.preventDefault();
-      const dropdown = this.nextElementSibling;
+      const dropdown = toggle.nextElementSibling;
 
-      // Close other dropdowns
-      document.querySelectorAll(".dropdown-menu").forEach((menu) => {
-        if (menu !== dropdown) menu.classList.remove("show");
-      });
-
-      // Toggle current one
-      dropdown.classList.toggle("show");
+      // Toggle only this dropdown
+      if (dropdown.classList.contains("show")) {
+        dropdown.classList.remove("show");
+      } else {
+        document.querySelectorAll(".dropdown-menu").forEach((menu) =>
+          menu.classList.remove("show")
+        );
+        dropdown.classList.add("show");
+      }
     });
   });
 });

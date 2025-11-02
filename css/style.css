@@ -450,6 +450,16 @@ header {
     font-size: 14px;
   }
 }
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
 
 /* ===== HERO SECTION ===== */
 .hero {
