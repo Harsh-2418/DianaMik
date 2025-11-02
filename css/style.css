@@ -224,6 +224,14 @@ header {
   color: #ff6600;
 }
 
+.dropdown-menu {
+  display: none;
+}
+.dropdown-menu.show {
+  display: block;
+}
+
+
 /* === ARROW === */
 .arrow {
   display: inline-block;
@@ -313,47 +321,133 @@ header {
 }
 
 /* === RESPONSIVE === */
-@media (max-width: 900px) {
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet and smaller */
+@media (max-width: 992px) {
+.menu-toggle {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  font-size: 26px;
+  color: #003366;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+
+  .nav-links {
+    gap: 20px;
+    display: none;
+  }
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+  }
   .navbar {
-    flex-wrap: wrap;
-    justify-content: space-between;
     padding: 12px 30px;
   }
+  .book-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
 
-  .menu-toggle {
+/* Mobile menu (hamburger style) */
+/* ===== MOBILE NAVBAR FIX ===== */
+@media (max-width: 768px) {
+  .top-navbar {
+    font-size: 12px;
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+
+  /* Hide links by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    text-align: center;
+    margin-top: 8px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    display: none;
+  }
+
+  /* Show links when active */
+  .nav-links.show {
     display: flex;
   }
 
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
-  }
-  .nav-links.active {
-    max-height: 600px;
-    padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .nav-links a {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
   }
 
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    border-radius: 0;
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    color: #003366;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+  }
+
+  /* Inquiry button styling */
+  .book-btn {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+    background: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .book-btn:hover {
+    background: #e05500;
+  }
+}
+
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .top-navbar {
+    font-size: 12px;
+    padding: 4px 0;
+  }
+
+  .logo img {
+    height: 70px;
   }
 
   .book-btn {
-    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
   }
 }
 

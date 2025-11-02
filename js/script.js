@@ -1,15 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ===== NAVBAR TOGGLE =====
+document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
 
   if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+      navLinks.classList.toggle("show");
       menuToggle.classList.toggle("open");
     });
   }
+
+  // Dropdown toggle logic
+  document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      const dropdown = this.nextElementSibling;
+
+      // Close other dropdowns
+      document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+        if (menu !== dropdown) menu.classList.remove("show");
+      });
+
+      // Toggle current one
+      dropdown.classList.toggle("show");
+    });
+  });
+});
+
 
   // ===== HERO SLIDER WITH CONTROLS =====
   {
