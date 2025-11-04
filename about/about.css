@@ -119,7 +119,71 @@
   color: #333;
 }
 
-/* Add spacing before footer */
-footer {
-  margin-top: 100px;
+/* === GOOGLE REVIEWS SECTION === */
+.google-reviews-section {
+  background: linear-gradient(to right, #001a33, #002147); /* deep navy tone */
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.google-reviews-section .container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.google-reviews-section h2 {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.google-reviews-section .review-subtitle {
+  font-size: 1.1rem;
+  color: #d1e4ff;
+  margin-bottom: 40px;
+}
+
+.google-reviews-section .review-subtitle span {
+  color: #f36b21;
+  font-weight: 600;
+}
+
+.reviews-widget {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: transparent;
+  border-radius: 16px;
+  padding: 20px 0;
+}
+
+/* Elfsight override fixes */
+.reviews-widget .elfsight-app {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.reviews-widget iframe {
+  border: none !important;
+  width: 100% !important;
+}
+
+.elfsight-app .eapps-google-reviews-widget {
+  padding: 20px 0 !important;
+}
+
+.elfsight-app .eapps-widget-toolbar {
+  bottom: -10px !important;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .google-reviews-section h2 {
+    font-size: 2rem;
+  }
+  .reviews-widget {
+    width: 95%;
+  }
 }

@@ -1,0 +1,81 @@
+/* === THANK YOU PAGE STYLING === */
+
+.thankyou-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2663eb, #ff7a00);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 60px 20px;
+}
+
+.thankyou-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  text-align: center;
+  padding: 60px 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.thankyou-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.thankyou-box p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.back-btn {
+  display: inline-block;
+  background: #fff;
+  color: #2663eb;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 Hover Animation */
+.back-btn:hover {
+  background: #2663eb;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(38, 99, 235, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Entry Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .thankyou-box {
+    padding: 40px 25px;
+  }
+
+  .thankyou-box h1 {
+    font-size: 2rem;
+  }
+
+  .thankyou-box p {
+    font-size: 1rem;
+  }
+}

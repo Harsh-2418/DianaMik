@@ -1,92 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blogs | DianaMik Consultancy</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | DianaMik Hospital Management Consultancy LLP</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/blogs/blogs.css" />
+  
+</head>
+<body>
+  <!-- ====== Header (imported from header.html) ====== -->
+  <div id="header"></div>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <!-- Link to CSS -->
-    <link rel="stylesheet" href="blogs.css" />
-  </head>
-
-  <body class="blog-body">
-    <!-- Header Include -->
-    <div id="header"></div>
-
-    <section class="blog-hero">
-      <div class="hero-content">
-        <h1>Insights that Empower Healthcare</h1>
-        <p>
-          Explore our latest blogs on hospital management, accreditation, and
-          healthcare excellence.
-        </p>
+  <!-- ====== Blog Section ====== -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="section-header">
+        <h5 class="sub-title">Our Insights</h5>
+        <h2 class="section-heading">Latest Blog Posts</h2>
+        <p>Stay updated with healthcare trends, hospital management tips, and industry insights.</p>
       </div>
-    </section>
 
-    <section class="blog-section">
       <div class="blog-grid">
+        <!-- Blog Card -->
         <div class="blog-card">
-          <img src="../assets/images/blog1.jpg" alt="NABH Accreditation" />
-          <div class="blog-info">
-            <h3>NABH Accreditation: Building Trust & Quality</h3>
-            <p>
-              Learn how NABH accreditation elevates hospital standards and
-              patient satisfaction through systematic quality improvement.
-            </p>
-            <a href="#" class="read-btn">Read More</a>
+          <div class="blog-image">
+            <img src="/assets/blogs/blog1.jpg" alt="Blog 1" loading="lazy">
+          </div>
+          <div class="blog-content">
+            <h3>Improving Patient Experience with Smart Design</h3>
+            <p>Discover how hospital layout and design directly impact patient comfort and recovery.</p>
+            <a href="#" class="read-more">Read More →</a>
           </div>
         </div>
 
         <div class="blog-card">
-          <img src="../assets/images/blog2.jpg" alt="TPA Empanelment" />
-          <div class="blog-info">
-            <h3>TPA & Health Insurance Empanelment Guide</h3>
-            <p>
-              Step-by-step guidance on empaneling with top TPAs and insurers to
-              offer smooth cashless healthcare services.
-            </p>
-            <a href="#" class="read-btn">Read More</a>
+          <div class="blog-image">
+            <img src="/assets/blogs/blog2.jpg" alt="Blog 2" loading="lazy">
+          </div>
+          <div class="blog-content">
+            <h3>Hospital Space Optimization: The New Standard</h3>
+            <p>Learn strategies to optimize space for both functionality and safety in healthcare settings.</p>
+            <a href="#" class="read-more">Read More →</a>
           </div>
         </div>
 
         <div class="blog-card">
-          <img src="../assets/images/blog3.jpg" alt="Cashless Processing" />
-          <div class="blog-info">
-            <h3>Cashless Claim Processing Simplified</h3>
-            <p>
-              Discover how hospitals can streamline cashless processing and
-              improve claim turnaround time effectively.
-            </p>
-            <a href="#" class="read-btn">Read More</a>
+          <div class="blog-image">
+            <img src="/assets/blogs/blog3.jpg" alt="Blog 3" loading="lazy">
           </div>
-        </div>
-
-        <div class="blog-card">
-          <img src="../assets/images/blog4.jpg" alt="Hospital Planning" />
-          <div class="blog-info">
-            <h3>Smart Hospital Planning & Design</h3>
-            <p>
-              Explore how strategic planning and modern hospital designs can
-              optimize workflow and enhance patient care.
-            </p>
-            <a href="#" class="read-btn">Read More</a>
+          <div class="blog-content">
+            <h3>How Technology is Transforming Hospital Management</h3>
+            <p>From AI-powered diagnostics to smart infrastructure — see how digital solutions are reshaping healthcare.</p>
+            <a href="#" class="read-more">Read More →</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer Include -->
-    <div id="footer"></div>
-
-    <!-- Correct JS Path -->
-    <script src="/js/include.js"></script>
-    <script src="/js/script.js"></script>
-  <script src="/js/nav.js"></script>
-  </body>
+  <!-- ====== Footer ====== -->
+  <div id="footer"></div>
+  <script src="/js/include.js" defer></script>
+</body>
 </html>
