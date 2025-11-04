@@ -56,6 +56,23 @@
   transform: scaleX(1); /* Fix mirrored icon */
 }
 
+span a {
+  color: #fff; /* white text */
+  text-decoration: none;
+  margin-left: 6px;
+  transition: color 0.3s ease;
+}
+
+span a:hover {
+  color: #fff; /* your orange tone on hover */
+}
+
+span i {
+  color: #ffff !important; /* orange icon color */
+  margin-right: 1px !important;
+}
+
+
 /* ===== Main Navbar Adjustments ===== */
 /* ====== RESET & BASE ====== */
 * {
