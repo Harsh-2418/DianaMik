@@ -57,409 +57,347 @@
 }
 
 /* ===== Main Navbar Adjustments ===== */
+/* ====== RESET & BASE ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ====== TOP BAR ====== */
+.top-bar {
+  background: #272b67;
+  color: white;
+  padding: 6px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.top-info span {
+  margin: 0 15px;
+}
+
+.top-info i {
+  margin-right: 6px;
+  color: #f1a10a;
+}
+
+/* ====== NAVBAR ====== */
 .main-navbar {
-  background: #ffffff;
-  border-bottom: 2px solid #000;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
 }
 
 .logo img {
-  height: 90px; /* makes logo span both navbar heights visually */
-  object-fit: contain;
-}
-
-
-
-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background: #fff;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  z-index: 1000;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 60px;
-  max-width: 1400px;
-  margin: auto;
-  z-index: 1000;
-}
-
-/* === LOGO === */
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-.logo-img {
   height: 60px;
-  width: auto;
 }
 
-/* === NAV LINKS === */
+/* ====== NAV LINKS ====== */
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 28px;
   list-style: none;
-  margin-left: auto;
-  margin-right: 25px;
+  align-items: center;
+  gap: 25px;
+  transition: all 0.3s ease;
 }
 
 .nav-links li {
   position: relative;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #003366;
-  font-weight: 1000;
-  font-size: 17px;
-  padding: 6px 0;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-/* Underline hover */
+/* ====== LINK ANIMATION ====== */
 .nav-links a {
   position: relative;
+  display: inline-block;
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  padding: 6px 10px;
+  color: #272b67;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  transition: 0.3s;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* reset the old underline */
-.nav-links a::after {
-  content: none;
-}
-
-/* border animation */
+/* Border animation (top and bottom lines) */
 .nav-links a::before,
 .nav-links a::after {
   content: "";
   position: absolute;
-  display: block;
-  border: 0 solid transparent;
-  width: 0%;
-  height: 0%;
-  transition: all 0.4s ease;
-}
-
-.nav-links a::after {
-  top: 0;
   left: 0;
-  border-top: 2px solid transparent;
-  border-left: 2px solid transparent;
+  width: 100%;
+  height: 2px;
+  background: #f1a10a;
+  transform: scaleX(0);
+  transition: 0.3s ease;
 }
 
 .nav-links a::before {
-  right: 0;
+  top: 0;
+  transform-origin: left;
+}
+
+.nav-links a::after {
   bottom: 0;
-  border-bottom: 2px solid transparent;
-  border-right: 2px solid transparent;
+  transform-origin: right;
+}
+
+/* Hover animation */
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-links a:hover {
-  color: #ff6600; /* or your brand color */
+  background-color: #f1a10a;
+  border-radius: 4px;
 }
 
-.nav-links a:hover::before,
-.nav-links a:hover::after {
-  width: 100%;
-  height: 100%;
-  border-color: #ff6600; /* same color as text hover */
-  border-width: 2px;
-}
-
-
-/* === DROPDOWN === */
-.dropdown {
-  position: relative;
-}
-.dropdown-content {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-  background: #fff;
+/* ====== BUTTON ====== */
+.book-btn {
+  background: #f1a10a;
+  color: #fff !important;
+  padding: 8px 14px;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-width: 240px;
-  opacity: 0;
-  transform: translateY(15px);
-  visibility: hidden;
-  pointer-events: none;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  z-index: 1001;
-}
-.dropdown:hover > .dropdown-content,
-.dropdown:focus-within > .dropdown-content {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  pointer-events: auto;
-}
-.dropdown-content a {
-  display: block;
-  padding: 10px 18px;
-  color: #003366;
-  white-space: nowrap;
-  transition: all 0.25s ease;
-}
-.dropdown-content a:hover {
-  background: #f7f7f7;
-  color: #ff6600;
+  font-weight: 600;
 }
 
-.dropdown-menu {
+.book-btn:hover {
+  background: #272b67;
+}
+
+/* ====== DROPDOWN / MEGA MENU ====== */
+.dropdown:hover .mega-menu {
+  display: flex;
+}
+
+.mega-menu {
   display: none;
-}
-.dropdown-menu.show {
-  display: block;
-}
-
-
-/* === ARROW === */
-.arrow {
-  display: inline-block;
-  margin-left: 5px;
-  border: solid #003366;
-  border-width: 0 2px 2px 0;
-  padding: 3px;
-  transform: rotate(45deg);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-.dropdown:hover .arrow {
-  transform: rotate(225deg) translateY(2px);
-  border-color: #ff6600;
-}
-
-.navbar ul li ul {
   position: absolute;
   top: 100%;
   left: 0;
   background: white;
-  list-style: none;
-  padding: 10px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 2000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  min-width: 300px;
+  border-top: 3px solid #f1a10a;
+  z-index: 999;
+  flex-direction: column;
 }
 
-/* === BOOK CONSULTATION BUTTON === */
-.book-btn {
-  position: relative;
-  background: #ff6600;
-  color: #000000; /* black text before hover */
-  padding: 12px 28px;
-  border: 2px solid #000000;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  box-shadow: 0 0 8px rgba(255, 173, 20, 0.5);
-  font-family: Poppins, sans-serif;
-  font-weight: bold;
-  z-index: 1;
-  text-decoration: none; /* remove underline */
+.mega-menu.grid-2 {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  min-width: 500px;
 }
 
-.book-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #0055aa;
-  opacity: 0;
-  transform: scale(0);
-  transition: all 0.3s ease;
-  z-index: -1;
+.dropdown:hover .grid-2 {
+  display: grid;
 }
 
-.book-btn:hover {
-  color: #ffffff; /* white text on hover */
-  box-shadow: 0 0 20px rgba(255, 169, 20, 0.8);
-  text-shadow: none;
+.mega-menu a {
+  display: block;
+  color: #272b67;
+  padding: 3px 0;
+  transition: 0.3s;
 }
 
-.book-btn:hover::before {
-  opacity: 1;
-  transform: scale(1);
-  background-image: 
-    linear-gradient(90deg, transparent 0%, transparent 20%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 40%, transparent 40%, transparent 60%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.1) 80%, transparent 80%, transparent 100%),
-    linear-gradient(0deg, transparent 0%, transparent 20%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 40%, transparent 40%, transparent 60%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.1) 80%, transparent 80%, transparent 100%);
-  background-size: 10px 10px;
+.mega-menu a:hover {
+  color: #f1a10a;
 }
 
-.book-btn:active {
-  transform: scale(0.95);
-}
-
-
-/* === HAMBURGER MENU === */
+/* ====== HAMBURGER MENU ====== */
 .menu-toggle {
   display: none;
   flex-direction: column;
+  cursor: pointer;
   gap: 5px;
-  cursor: pointer;
+  position: relative;
+  z-index: 1001;
 }
+
 .menu-toggle span {
-  width: 25px;
+  width: 28px;
   height: 3px;
-  background: #003366;
+  background: #272b67;
+  transition: 0.4s;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
-/* === RESPONSIVE === */
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Tablet and smaller */
-@media (max-width: 992px) {
-.menu-toggle {
-  display: block;
-  position: absolute;
-  right: 20px;
-  top: 25px;
-  font-size: 26px;
-  color: #003366;
-  cursor: pointer;
-  z-index: 1000;
+/* ====== HAMBURGER TO CROSS ====== */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
-
-
-  .nav-links {
-    gap: 20px;
-    display: none;
-  }
-  .nav-links.show {
-    display: flex;
-    flex-direction: column;
-  }
-  .navbar {
-    padding: 12px 30px;
-  }
-  .book-btn {
-    padding: 10px 20px;
-    font-size: 15px;
-  }
-}
-
-/* Mobile menu (hamburger style) */
-/* ===== MOBILE NAVBAR FIX ===== */
-@media (max-width: 768px) {
-  .top-navbar {
-    font-size: 12px;
-    padding: 4px 0;
-    text-align: center;
-  }
-
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 8px 16px;
-  }
-
-  .logo img {
-    height: 55px;
-  }
-
-  /* Hide links by default */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: white;
-    text-align: center;
-    margin-top: 8px;
-    padding: 10px 0;
-    border-top: 1px solid #ddd;
-    display: none;
-  }
-
-  /* Show links when active */
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links a {
-    font-size: 16px;
-    padding: 10px 0;
-    display: block;
-  }
-
-  .nav-links.show {
-    display: flex;
-    flex-direction: column;
-  }
-
-
-  .menu-toggle {
-    display: block;
-    font-size: 28px;
-    color: #003366;
-    cursor: pointer;
-    position: relative;
-    z-index: 1001;
-  }
-
-  /* Inquiry button styling */
-  .book-btn {
-    display: block;
-    width: 100%;
-    margin-top: 8px;
-    text-align: center;
-    font-size: 15px;
-    padding: 10px 0;
-    background: #ff6600;
-    color: white;
-    border: none;
-    border-radius: 4px;
-  }
-
-  .book-btn:hover {
-    background: #e05500;
-  }
-}
-
-
-/* Extra small phones */
-@media (max-width: 480px) {
-  .top-navbar {
-    font-size: 12px;
-    padding: 4px 0;
-  }
-
-  .logo img {
-    height: 70px;
-  }
-
-  .book-btn {
-    padding: 10px;
-    font-size: 14px;
-  }
-}
-.menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-.menu-toggle.open span:nth-child(2) {
+.menu-toggle.active span:nth-child(2) {
   opacity: 0;
 }
-.menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    border-top: 1px solid #ddd;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .nav-links.show-menu {
+    display: flex;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    padding: 12px 18px;
+  }
+
+  /* DROPDOWN FIX FOR MOBILE */
+  .mega-menu,
+  .grid-2 {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    display: none !important;
+    border-top: none;
+  }
+
+  .dropdown.active .mega-menu,
+  .dropdown.active .grid-2 {
+    display: flex !important;
+    flex-direction: column;
+    background: #f9f9f9;
+    padding-left: 10px;
+  }
+
+  .mega-menu a {
+    padding: 8px 0;
+    font-size: 15px;
+  }
+
+  .nav-links a i {
+    float: right;
+  }
+
+  /* Animation hover disabled on mobile for better UX */
+  .nav-links a:hover {
+    background-color: transparent;
+    color: #f1a10a;
+  }
+  .nav-links a::before,
+  .nav-links a::after {
+    display: none;
+  }
+}
+/* ====== DROPDOWN MENU FIX ====== */
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 15px 20px;
+  min-width: 240px;
+  border-top: 3px solid #f1a10a;
+  z-index: 999;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Slide + fade in dropdown on hover */
+.dropdown:hover .mega-menu {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown links styling */
+.mega-menu a {
+  display: block;
+  color: #272b67;
+  font-size: 15px;
+  padding: 8px 0;
+  text-decoration: none;
+  transition: 0.3s ease;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Fix: no orange block behind text */
+.mega-menu a:hover {
+  color: #f1a10a;
+  background: transparent !important;
+}
+
+/* ====== SEND INQUIRY BUTTON BLINK ====== */
+.book-btn {
+  background: #f1a10a;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  animation: blinkButton 1s infinite;
+}
+
+@keyframes blinkButton {
+  0%,
+  100% {
+    background-color: #f1a10a;
+    box-shadow: 0 0 10px #f1a10a;
+  }
+  50% {
+    background-color: #272b67;
+    box-shadow: 0 0 15px #272b67;
+  }
+}
+
+.book-btn:hover {
+  background: #272b67;
+}
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -525,9 +463,10 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: #000;
+  -webkit-text-stroke: #fff;
   text-align: center;
-  z-index: 1;
+  z-index: 1000;
   width: 90%;
   max-width: 800px;
 }
@@ -552,10 +491,11 @@ header {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+  z-index: 10000;
 }
 
 .hero-btn:hover {
-  background: #e65c00;
+  background: #003366;
   transform: translateY(-3px);
 }
 
@@ -653,6 +593,25 @@ header {
   opacity: 1;
   transform: translateY(0);
 }
+.hero .slide {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+  opacity: 0.5;
+  z-index: 99;
+}
+
+.hero .slide.active {
+  opacity: 0.5;
+  z-index: 99;
+}
+
 /* ===== About Section Styles ===== */
 .about-section {
   padding: 100px 8%;
@@ -907,7 +866,7 @@ header {
   .expertise-container {
     gap: 25px;
   }
-} 
+}
 /* ============================= */ /* OUR EXPERTISE SECTION STYLING */ /* ============================= */
 .expertise-section {
   background: #fff;
@@ -976,7 +935,6 @@ header {
   display: block;
 }
 
-
 .expertise-card h3 {
   color: #0a3d62;
   margin-bottom: 15px;
@@ -1039,18 +997,28 @@ header {
   z-index: 2;
 }
 
+/* ✅ Make 3 boxes per row */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   justify-items: center;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* ✅ Equal box size for all */
 .stat-box {
   background: linear-gradient(135deg, #2663eb, #ff7a00);
+  width: 320px; /* same width */
+  height: 180px; /* same height */
   padding: 30px;
   border-radius: 10px;
+  display: flex; /* center content */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1080,9 +1048,23 @@ header {
   letter-spacing: 1px;
 }
 
-@media (max-width: 768px) {
+/* ✅ Responsive design */
+@media (max-width: 1024px) {
   .stat-box {
-    padding: 25px;
+    width: 280px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .stat-box {
+    width: 240px;
+    height: 150px;
   }
 
   .stat-box h2 {
@@ -1091,6 +1073,17 @@ header {
 
   .stat-box p {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-box {
+    width: 90%;
+    height: 140px;
   }
 }
 
@@ -1237,12 +1230,11 @@ header {
 .client-box {
   flex: 0 0 auto;
   background: white; /* no white background */
-  border-radius: 0;        /* no rounded corners */
-  box-shadow: none;        /* remove shadow “border” */
-  padding: 10px 20px;      /* slightly smaller padding for balance */
+  border-radius: 0; /* no rounded corners */
+  box-shadow: none; /* remove shadow “border” */
+  padding: 10px 20px; /* slightly smaller padding for balance */
   transition: transform 0.3s ease;
 }
-
 
 .client-box:hover {
   transform: scale(1.05);
@@ -1548,7 +1540,7 @@ textarea:focus {
 }
 /* ==========FOOTER==========*/
 .footer {
-  background-color: #0D3C66;
+  background-color: #0d3c66;
   color: #f1f1f1;
   padding: 60px 8%;
   font-family: "Poppins", sans-serif;
@@ -1647,6 +1639,12 @@ textarea:focus {
   color: #cbd3e1;
 }
 
+.footer-services ul li {
+  white-space: nowrap; /* Keeps each item on one line */
+  overflow: hidden; /* Hides overflow text if needed */
+  text-overflow: ellipsis; /* Adds ... if text is too long */
+}
+
 @media (max-width: 992px) {
   .footer-container {
     grid-template-columns: 1fr 1fr;
@@ -1741,4 +1739,41 @@ footer {
 .whatsapp-float:hover {
   background-color: #128c7e;
   transform: scale(1.1);
+}
+/* ======== Preloader ======== */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /* match site background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#preloader img {
+  width: 120px; /* adjust logo size */
+  height: auto;
+  animation: popup 1.4s ease-in-out infinite;
+}
+
+/* ======== Pop-up Down Animation ======== */
+@keyframes popup {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.08);
+  }
+}
+
+/* Fade out after load */
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
 }

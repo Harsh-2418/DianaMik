@@ -1,37 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const dropdowns = document.querySelectorAll(".dropdown > a");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
-  // ===== MOBILE MENU TOGGLE =====
-  if (menuToggle && navLinks) {
+    // Toggle navbar open/close
     menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-      menuToggle.classList.toggle("open");
+      navLinks.classList.toggle("show-menu");
+      menuToggle.classList.toggle("active");
     });
-  }
 
-  // ===== DROPDOWN MENU TOGGLE =====
-  dropdownToggles.forEach((toggle) => {
-    toggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      const dropdown = toggle.nextElementSibling;
-
-      // Toggle only this dropdown
-      if (dropdown.classList.contains("show")) {
-        dropdown.classList.remove("show");
-      } else {
-        document.querySelectorAll(".dropdown-menu").forEach((menu) =>
-          menu.classList.remove("show")
-        );
-        dropdown.classList.add("show");
-      }
+    // Dropdowns for mobile
+    dropdowns.forEach((drop) => {
+      drop.addEventListener("click", (e) => {
+        if (window.innerWidth <= 992) {
+          e.preventDefault();
+          const parent = drop.parentElement;
+          parent.classList.toggle("active");
+        }
+      });
     });
   });
-});
-
 
   // ===== HERO SLIDER WITH CONTROLS =====
   {
@@ -155,73 +144,74 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-// ===== Expertise Section Animation =====
-if (document.querySelector("[data-animate]")) {
-  const cards = document.querySelectorAll("[data-animate]");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
-        }
+  // ===== Expertise Section Animation =====
+  if (document.querySelector("[data-animate]")) {
+    const cards = document.querySelectorAll("[data-animate]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    cards.forEach((card) => observer.observe(card));
+  }
+
+  if (document.querySelector("#stats")) {
+    const counters = document.querySelectorAll(".counter");
+    const section = document.querySelector("#stats");
+    let triggered = false;
+
+    const animateCounters = () => {
+      const interval = 30; // ms between updates (keeps smoothness similar to your original)
+      counters.forEach((counter) => {
+        const target = +counter.getAttribute("data-target");
+
+        // Duration inversely proportional to the target so larger targets finish faster.
+        // Clamped to reasonable min/max to keep animation visible and smooth.
+        const duration = Math.max(
+          600,
+          Math.round(3000 * (30 / Math.max(target, 1)))
+        );
+        const steps = Math.max(1, Math.round(duration / interval));
+        const increment = target / steps;
+
+        const updateCount = () => {
+          const current = +counter.innerText;
+          if (current < target) {
+            const next = Math.ceil(current + increment);
+            counter.innerText = next > target ? target : next;
+            setTimeout(updateCount, interval);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
       });
-    },
-    { threshold: 0.2 }
-  );
-  cards.forEach((card) => observer.observe(card));
-}
+    };
 
-//===== Counter animation =====//
-if (document.querySelector("#stats")) {
-  const counters = document.querySelectorAll(".counter");
-  const section = document.querySelector("#stats");
-  let triggered = false;
-
-  const animateCounters = () => {
-    const interval = 30; // ms between updates (keeps smoothness similar to your original)
-    counters.forEach(counter => {
-      const target = +counter.getAttribute("data-target");
-
-      // Duration inversely proportional to the target so larger targets finish faster.
-      // Clamped to reasonable min/max to keep animation visible and smooth.
-      const duration = Math.max(600, Math.round(3000 * (30 / Math.max(target, 1))));
-      const steps = Math.max(1, Math.round(duration / interval));
-      const increment = target / steps;
-
-      const updateCount = () => {
-        const current = +counter.innerText;
-        if (current < target) {
-          const next = Math.ceil(current + increment);
-          counter.innerText = next > target ? target : next;
-          setTimeout(updateCount, interval);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      updateCount();
+    window.addEventListener("scroll", () => {
+      const sectionTop = section.offsetTop - window.innerHeight + 200;
+      if (!triggered && window.scrollY > sectionTop) {
+        animateCounters();
+        triggered = true;
+      }
     });
-  };
 
-  window.addEventListener("scroll", () => {
-    const sectionTop = section.offsetTop - window.innerHeight + 200;
-    if (!triggered && window.scrollY > sectionTop) {
-      animateCounters();
-      triggered = true;
-    }
-  });
-
-  // Also try to trigger if already in view on load (handy for short pages)
-  window.addEventListener("load", () => {
-    const sectionTop = section.offsetTop - window.innerHeight + 200;
-    if (!triggered && window.scrollY > sectionTop) {
-      animateCounters();
-      triggered = true;
-    }
-  });
-}
-
+    // Also try to trigger if already in view on load (handy for short pages)
+    window.addEventListener("load", () => {
+      const sectionTop = section.offsetTop - window.innerHeight + 200;
+      if (!triggered && window.scrollY > sectionTop) {
+        animateCounters();
+        triggered = true;
+      }
+    });
+  }
 
   // ===== WHY CHOOSE US =====
   const chooseBoxes = document.querySelectorAll(".choose-box");
@@ -237,21 +227,21 @@ if (document.querySelector("#stats")) {
   revealChoose();
 
   // ===== CLIENTS SECTION =====
-  const slider = document.querySelector('.clients-slider');
-  const track = document.querySelector('.clients-track');
+  const slider = document.querySelector(".clients-slider");
+  const track = document.querySelector(".clients-track");
   if (slider && track) {
-    slider.addEventListener('mouseenter', () => {
-      track.style.animationPlayState = 'paused';
+    slider.addEventListener("mouseenter", () => {
+      track.style.animationPlayState = "paused";
     });
-    slider.addEventListener('mouseleave', () => {
-      track.style.animationPlayState = 'running';
+    slider.addEventListener("mouseleave", () => {
+      track.style.animationPlayState = "running";
     });
   }
 
   // ===== BLOGS SECTION =====
   const blogCards = document.querySelectorAll(".blog-card");
   function revealBlogs() {
-    blogCards.forEach(card => {
+    blogCards.forEach((card) => {
       const cardTop = card.getBoundingClientRect().top;
       if (cardTop < window.innerHeight - 100) {
         card.classList.add("visible");
