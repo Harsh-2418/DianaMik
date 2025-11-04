@@ -1,23 +1,63 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    // Load header
-    const headerResponse = await fetch("../header.html");
-    const headerHTML = await headerResponse.text();
-    document.getElementById("header").innerHTML = headerHTML;
+// include.js — handles dynamic header/footer import + navbar initialization
 
-    // Load footer
-    const footerResponse = await fetch("../footer.html");
-    const footerHTML = await footerResponse.text();
-    document.getElementById("footer").innerHTML = footerHTML;
+document.addEventListener("DOMContentLoaded", () => {
+  // ===== Load HEADER =====
+  const header = document.getElementById("header");
+  if (header) {
+    fetch("/header.html")
+      .then((res) => res.text())
+      .then((data) => {
+        header.innerHTML = data;
+        initNavbar(); // ✅ Initialize navbar after header is added
+      })
+      .catch((err) => console.error("Error loading header:", err));
+  }
 
-    // Ensure main stylesheet is loaded only once
-    if (!document.querySelector('link[href*="style.css"]')) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "../css/style.css";
-      document.head.appendChild(link);
-    }
-  } catch (err) {
-    console.error("Include load failed:", err);
+  // ===== Load FOOTER =====
+  const footer = document.getElementById("footer");
+  if (footer) {
+    fetch("/footer.html")
+      .then((res) => res.text())
+      .then((data) => {
+        footer.innerHTML = data;
+      })
+      .catch((err) => console.error("Error loading footer:", err));
   }
 });
+
+// ===== Initialize Navbar Logic =====
+function initNavbar() {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  const dropdowns = document.querySelectorAll(".dropdown > a");
+
+  if (!menuToggle || !navLinks) {
+    console.warn("Navbar elements not found — skipping init.");
+    return;
+  }
+
+  // Toggle navbar open/close (hamburger)
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show-menu");
+    menuToggle.classList.toggle("active");
+  });
+
+  // Close menu when link clicked (optional — uncomment if needed)
+  // navLinks.querySelectorAll("a").forEach((link) => {
+  //   link.addEventListener("click", () => {
+  //     navLinks.classList.remove("show-menu");
+  //     menuToggle.classList.remove("active");
+  //   });
+  // });
+
+  // Dropdowns for mobile
+  dropdowns.forEach((drop) => {
+    drop.addEventListener("click", (e) => {
+      if (window.innerWidth <= 992) {
+        e.preventDefault();
+        const parent = drop.parentElement;
+        parent.classList.toggle("active");
+      }
+    });
+  });
+}
