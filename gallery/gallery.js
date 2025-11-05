@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const galleryGrid = document.getElementById("gallery-grid");
 
-  const totalImages = 46;
-  const images = Array.from({ length: totalImages }, (_, i) => `/gallery/images/image(${i + 1}).jpg`);
+  const totalImages = 37;
+  const images = Array.from({ length: totalImages }, (_, i) => `/gallery/images/image${i + 1}.jpg`);
 
   // Generate images
   images.forEach((src, index) => {
