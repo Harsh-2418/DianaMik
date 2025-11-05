@@ -90,86 +90,87 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  flex-wrap: wrap;
-  gap: 40px;
-  width: 80%;
-  margin: 0 auto;
+  gap: 30px;
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #f8fbff, #e9f3ff); /* subtle gradient for clarity */
 }
 
 .vision-box,
 .mission-box,
 .values-box {
   flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-  background: #ffffff;
-  border: 2px solid #e1eaf4;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   padding: 40px 30px;
-  transition: all 0.4s ease;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
+/* Hover lift effect for clarity */
 .vision-box:hover,
 .mission-box:hover,
 .values-box:hover {
   transform: translateY(-8px);
-  border-color: #f36b21;
-  box-shadow: 0 8px 25px rgba(243, 107, 33, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Fix for icon and heading spacing */
+.vmv-icon {
+  width: 65px;
+  height: 65px;
+  margin-bottom: 15px;
 }
 
 .vision-box h3,
 .mission-box h3,
 .values-box h3 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  color: #002147;
-  position: relative;
-}
-
-.vision-box p,
-.mission-box p,
-.values-box p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
-}
-
-/* ===== Custom Blinking Arrow Bullet Style ===== */
-.vision-box ul,
-.mission-box ul,
-.values-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  color: #0b2447;
+  margin-bottom: 15px;
 }
 
 .vision-box ul li,
 .mission-box ul li,
 .values-box ul li {
+  list-style: none;
+  margin: 10px 0;
+  color: #444;
+  line-height: 1.7;
+  font-size: 15px;
+  text-align: left;
   display: flex;
   align-items: flex-start;
-  gap: 6px;
-  font-size: 1.05rem;
-  color: #333;
-  line-height: 1.8;
-  margin-bottom: 8px;
+  gap: 8px;
 }
 
-/* --- Arrow Styling with Blink Animation --- */
 .vision-box ul li::before,
 .mission-box ul li::before,
 .values-box ul li::before {
-  content: "\f101"; /* Font Awesome double-right arrow */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: #f36b21;
-  font-size: 0.9rem;
-  display: inline-block;
-  min-width: 12px;
-  transform: translateY(2px);
-  animation: blinkArrow 1.2s infinite ease-in-out;
+  content: "»";
+  color: #ff6a00;
+  animation: blinkArrow 1.5s infinite;
 }
+
+/* Blinking arrow animation */
+@keyframes blinkArrow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Responsive layout */
+@media (max-width: 992px) {
+  .vision-mission-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vision-box,
+  .mission-box,
+  .values-box {
+    max-width: 90%;
+  }
+}
+
 
 /* --- Blinking Effect Keyframes --- */
 @keyframes blinkArrow {
