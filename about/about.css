@@ -272,3 +272,44 @@
     width: 95%;
   }
 }
+/* Force image above and center it */
+.about-container {
+  flex-direction: column; /* Stack image on top, text below */
+  align-items: center; /* Center horizontally */
+  justify-content: center;
+  text-align: center;
+}
+
+/* Center the about text below image */
+.about-text {
+  text-align: justify;
+  max-width: 900px;
+}
+
+/* Center and resize image properly */
+.about-image {
+  order: -1; /* Move image before text */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.about-image img {
+  width: 60%;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .about-image img {
+    width: 85%;
+  }
+}

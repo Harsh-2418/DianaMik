@@ -77,13 +77,18 @@
 .founder-content {
   flex: 2;
   animation: revealText 1.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 650px;
 }
 
 .founder-content h2 {
   font-size: 2.2rem;
   color: #002b5b;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .founder-content h2 span {
@@ -93,25 +98,28 @@
 }
 
 .founder-content h4 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: #0096c7;
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .founder-content p {
-  line-height: 1.8;
+  line-height: 1.75;
   color: #333;
-  font-size: 1rem;
-  margin-bottom: 18px;
+  font-size: 1.02rem;
+  margin-bottom: 16px;
+  text-align: justify;
   opacity: 0;
   transform: translateY(20px);
   animation: textFadeUp 0.8s forwards;
 }
 
-.founder-content p:nth-child(3) { animation-delay: 0.4s; }
-.founder-content p:nth-child(4) { animation-delay: 0.6s; }
-.founder-content p:nth-child(5) { animation-delay: 0.8s; }
+.founder-content p:nth-of-type(1) { animation-delay: 0.3s; }
+.founder-content p:nth-of-type(2) { animation-delay: 0.5s; }
+.founder-content p:nth-of-type(3) { animation-delay: 0.7s; }
+
 
 /* Animations */
 @keyframes fadeUp {
