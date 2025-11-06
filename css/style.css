@@ -781,6 +781,20 @@ body {
 .read-more-btn:hover {
   background-color: #0055aa;
 }
+
+/* Better line arrangement and clean paragraph flow */
+.about-content p {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+  word-spacing: 1px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+
 /* ===== Our Expertises Section ===== */
 .expertise-section {
   background-color: #ffffff;
