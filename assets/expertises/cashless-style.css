@@ -1,0 +1,477 @@
+/* cashless-style.css */
+
+/* --- SCOPED RESET & VARIABLES --- */
+.cashless-page-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cashless-page-wrapper {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #4a5568;
+    line-height: 1.7;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+/* --- UTILITIES --- */
+.cashless-page-wrapper .cashless-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cashless-page-wrapper .cashless-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+/* Backgrounds */
+.cashless-page-wrapper .cashless-bg-light { background-color: #eef7fb; }
+.cashless-page-wrapper .cashless-bg-white { background-color: #ffffff; }
+.cashless-page-wrapper .cashless-bg-gradient { background: linear-gradient(135deg, #0E88C7 0%, #064e74 100%); }
+.cashless-page-wrapper .cashless-bg-dark { background-color: #052c42; color: #fff; }
+
+.cashless-page-wrapper .cashless-text-white { color: #ffffff !important; }
+.cashless-page-wrapper .cashless-text-center { text-align: center; }
+.cashless-page-wrapper .cashless-mt-4 { margin-top: 2.5rem; }
+.cashless-page-wrapper .cashless-mb-4 { margin-bottom: 2rem; }
+
+/* --- TYPOGRAPHY --- */
+.cashless-page-wrapper .cashless-heading {
+    font-size: 34px;
+    font-weight: 700;
+    color: #0E88C7;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.cashless-page-wrapper .cashless-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff6600;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.cashless-page-wrapper .cashless-text-center .cashless-heading::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cashless-page-wrapper .cashless-text-white.cashless-heading { color: #fff; }
+
+.cashless-page-wrapper .cashless-subheading {
+    font-size: 24px;
+    color: #0E88C7;
+    margin-bottom: 15px;
+}
+
+.cashless-page-wrapper .cashless-text {
+    font-size: 16px;
+    color: #556;
+    margin-bottom: 15px;
+}
+
+.cashless-page-wrapper .cashless-bg-dark .cashless-text,
+.cashless-page-wrapper .cashless-text-white .cashless-text {
+    color: #e2e8f0;
+}
+
+/* --- BUTTONS --- */
+.cashless-page-wrapper .cashless-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.cashless-page-wrapper .cashless-btn-primary {
+    background-color: #ff6600;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+}
+
+.cashless-page-wrapper .cashless-btn-primary:hover {
+    transform: translateY(-3px);
+    background-color: #e55b00;
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+}
+
+.cashless-page-wrapper .cashless-btn-orange {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+}
+
+.cashless-page-wrapper .cashless-btn-orange:hover {
+    background-color: transparent;
+    color: #ff6600;
+    border-color: #ff6600;
+}
+
+/* --- HERO SECTION --- */
+.cashless-page-wrapper .cashless-hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid #0E88C7;
+}
+
+.cashless-page-wrapper .cashless-hero-content {
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+}
+
+.cashless-page-wrapper .cashless-tag {
+    background: rgba(14, 136, 199, 0.1);
+    color: #0E88C7;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.cashless-page-wrapper .cashless-title {
+    font-size: 50px;
+    line-height: 1.2;
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+.cashless-page-wrapper .cashless-subtitle {
+    font-size: 20px;
+    color: #4a5568;
+    margin-bottom: 30px;
+    border-left: 4px solid #ff6600;
+    padding-left: 20px;
+}
+
+/* --- INTRO & DEFINITION --- */
+.cashless-page-wrapper .cashless-content-block {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cashless-page-wrapper .cashless-highlight-box {
+    background: #f0f9ff;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    border: 1px solid #d0eaff;
+}
+
+.cashless-page-wrapper .cashless-icon-float {
+    position: absolute;
+    top: -25px;
+    left: 40px;
+    background: #0E88C7;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(14, 136, 199, 0.3);
+}
+
+/* --- GRID 3 (IMPORTANCE) --- */
+.cashless-page-wrapper .cashless-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.cashless-page-wrapper .cashless-card {
+    background: #fff;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    text-align: center;
+    transition: all 0.4s ease;
+    border-top: 3px solid transparent;
+}
+
+.cashless-page-wrapper .cashless-hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-top-color: #ff6600;
+}
+
+.cashless-page-wrapper .cashless-icon-box {
+    font-size: 32px;
+    color: #0E88C7;
+    margin-bottom: 20px;
+    background: #eef7fb;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: 0.3s;
+}
+
+.cashless-page-wrapper .cashless-card:hover .cashless-icon-box {
+    background: #0E88C7;
+    color: #fff;
+}
+
+/* --- PROCESS (3 COLS PER ROW) --- */
+.cashless-page-wrapper .cashless-process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.cashless-page-wrapper .cashless-process-card {
+    background: #fff;
+    padding: 40px 30px 30px; /* Top padding for badge */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    position: relative;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.cashless-page-wrapper .cashless-process-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff6600;
+}
+
+.cashless-page-wrapper .cashless-step-badge {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #ff6600;
+    color: #fff;
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.4);
+}
+
+.cashless-page-wrapper .cashless-process-card h4 {
+    color: #0E88C7;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* --- DOCUMENT SECTION --- */
+.cashless-page-wrapper .cashless-flex-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.cashless-page-wrapper .cashless-info-col { flex: 1; }
+.cashless-page-wrapper .cashless-image-col { flex: 1; }
+
+.cashless-page-wrapper .cashless-icon-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.cashless-page-wrapper .cashless-icon-list li {
+    padding: 10px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.cashless-page-wrapper .cashless-icon-list li i {
+    color: #ff6600;
+    width: 25px;
+    text-align: center;
+}
+
+.cashless-page-wrapper .cashless-graphic-card {
+    background: #e0f2fe;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0E88C7;
+}
+
+.cashless-page-wrapper .cashless-graphic-card i { font-size: 80px; margin-bottom: 15px; }
+.cashless-page-wrapper .cashless-graphic-card span { font-weight: 600; font-size: 18px; }
+
+/* --- PREMIUM TABLE (NABH) --- */
+.cashless-page-wrapper .cashless-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.cashless-page-wrapper .cashless-premium-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    min-width: 600px;
+}
+
+.cashless-page-wrapper .cashless-premium-table th {
+    background: #0E88C7;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.cashless-page-wrapper .cashless-premium-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #edf2f7;
+    color: #4a5568;
+}
+
+.cashless-page-wrapper .cashless-premium-table tr:hover td {
+    background-color: #f1f9fe;
+    color: #0E88C7;
+}
+
+/* --- WHY CHOOSE US (USP GRID) --- */
+.cashless-page-wrapper .cashless-usp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.cashless-page-wrapper .cashless-usp-item {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.cashless-page-wrapper .cashless-usp-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.2);
+}
+
+.cashless-page-wrapper .cashless-usp-icon {
+    font-size: 30px;
+    color: #ff6600;
+    margin-bottom: 15px;
+}
+
+.cashless-page-wrapper .cashless-usp-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.cashless-page-wrapper .cashless-usp-item p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+}
+
+/* --- COMMITMENT --- */
+.cashless-page-wrapper .cashless-commitment-box {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cashless-page-wrapper .cashless-quote-icon {
+    font-size: 40px;
+    color: #ff6600;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.cashless-page-wrapper .cashless-commitment-title {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.cashless-page-wrapper .cashless-quote-text {
+    font-size: 22px;
+    font-style: italic;
+    color: #e0f2fe;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.cashless-page-wrapper .cashless-sub-quote {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 40px;
+}
+
+.cashless-page-wrapper .cashless-cta-wrapper {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 40px;
+}
+
+/* --- ANIMATION --- */
+.cashless-page-wrapper .cashless-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cashless-page-wrapper .cashless-reveal.cashless-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cashless-page-wrapper .cashless-delay-100 { transition-delay: 0.15s; }
+.cashless-page-wrapper .cashless-delay-200 { transition-delay: 0.3s; }
+.cashless-page-wrapper .cashless-delay-300 { transition-delay: 0.45s; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .cashless-page-wrapper .cashless-process-grid { grid-template-columns: repeat(2, 1fr); }
+    .cashless-page-wrapper .cashless-usp-grid { grid-template-columns: repeat(2, 1fr); }
+    .cashless-page-wrapper .cashless-flex-row { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+    .cashless-page-wrapper .cashless-process-grid { grid-template-columns: 1fr; }
+    .cashless-page-wrapper .cashless-usp-grid { grid-template-columns: 1fr; }
+    .cashless-page-wrapper .cashless-hero { text-align: center; }
+    .cashless-page-wrapper .cashless-subtitle { border: none; padding: 0; }
+    .cashless-page-wrapper .cashless-title { font-size: 36px; }
+}
+
+/* Fix spacing above "Why It Matters" box */
+.cashless-content-block.cashless-mt-4 {
+    margin-top: 60px !important;
+}
