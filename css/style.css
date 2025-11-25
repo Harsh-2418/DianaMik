@@ -1907,3 +1907,56 @@ footer {
   opacity: 0;
   visibility: hidden;
 }
+/* === Improve Hero Text Visibility === */
+.hero-content h1,
+.hero-content p {
+  color: #ffffff !important;
+  text-shadow: 
+    0 0 12px rgba(0, 0, 0, 1),
+    0 0 20px rgba(0, 0, 0, 0.9),
+    0 2px 10px rgba(0, 0, 0, 1) !important;
+}
+
+.hero-content {
+  filter: brightness(1.2);
+}
+
+/* Stronger overlay for better contrast */
+.overlay {
+  background: rgba(0, 0, 0, 0.55) !important;
+}
+/* -------- FIX HERO TEXT VISIBILITY COMPLETELY -------- */
+
+/* Remove brightness fade from slides */
+.hero .slide,
+.slide {
+  opacity: 1 !important;
+}
+
+/* Add a strong dark overlay on each slide */
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55) !important;  /* adjust 0.55 → 0.6 or 0.65 if needed */
+  z-index: 1;
+}
+
+/* Raise hero text above overlay */
+.hero-content {
+  position: relative;
+  z-index: 5 !important;
+}
+
+/* Make text brighter, crisp & punchy */
+.hero-content h1,
+.hero-content p {
+  color: #ffffff !important;
+  text-shadow:
+    0 0 10px rgba(0,0,0,1),
+    0 0 18px rgba(0,0,0,0.9),
+    0 2px 8px rgba(0,0,0,1) !important;
+}
