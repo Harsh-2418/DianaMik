@@ -375,3 +375,18 @@
     .service-page-wrapper h1 { font-size: 1.8rem; }
     .sp-hero-section { padding-top: 180px; }
 }
+/* Fix nav dropdown overlapping hero */
+nav, .navbar, .menu, .dropdown-menu {
+    z-index: 9999 !important;
+    position: relative;
+}
+
+.sp-hero-section {
+    position: relative;
+    z-index: 1 !important;
+}
+
+.sp-hero-content {
+    position: relative;
+    z-index: 2 !important;
+}
