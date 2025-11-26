@@ -139,40 +139,53 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach((card) => observer.observe(card));
   }
 
+  // ===== UPDATED STATS COUNTER LOGIC =====
   if (document.querySelector("#stats")) {
     const counters = document.querySelectorAll(".counter");
     const section = document.querySelector("#stats");
     let triggered = false;
 
     const animateCounters = () => {
-      const interval = 30; // ms between updates (keeps smoothness similar to your original)
+      const totalDuration = 2000; // All counters will finish in approx 2 seconds
+
       counters.forEach((counter) => {
         const target = +counter.getAttribute("data-target");
+        
+        // Determine frames if running at 30ms intervals
+        const minInterval = 30;
+        const totalFrames = totalDuration / minInterval;
 
-        // Duration inversely proportional to the target so larger targets finish faster.
-        // Clamped to reasonable min/max to keep animation visible and smooth.
-        const duration = Math.max(
-          600,
-          Math.round(3000 * (30 / Math.max(target, 1)))
-        );
-        const steps = Math.max(1, Math.round(duration / interval));
-        const increment = target / steps;
+        let stepTime, increment;
+
+        // If target is small (e.g., 8), we can't increment by less than 1.
+        // So we slow down the timer instead.
+        if (target < totalFrames) {
+          stepTime = totalDuration / target; // Slower tick for small numbers
+          increment = 1;
+        } else {
+          stepTime = minInterval; // Fast tick for large numbers
+          increment = Math.ceil(target / totalFrames);
+        }
 
         const updateCount = () => {
           const current = +counter.innerText;
+          
           if (current < target) {
-            const next = Math.ceil(current + increment);
+            const next = current + increment;
             counter.innerText = next > target ? target : next;
-            setTimeout(updateCount, interval);
+            // Use the dynamic stepTime
+            setTimeout(updateCount, stepTime);
           } else {
             counter.innerText = target;
           }
         };
+        
         updateCount();
       });
     };
 
     window.addEventListener("scroll", () => {
+      // Logic: If section is visible
       const sectionTop = section.offsetTop - window.innerHeight + 200;
       if (!triggered && window.scrollY > sectionTop) {
         animateCounters();
@@ -180,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Also try to trigger if already in view on load (handy for short pages)
+    // Also try to trigger if already in view on load
     window.addEventListener("load", () => {
       const sectionTop = section.offsetTop - window.innerHeight + 200;
       if (!triggered && window.scrollY > sectionTop) {
