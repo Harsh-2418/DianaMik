@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NABH Projects Directory | DianaMik Consultancy</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/about/hospitals.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="content-area">
+        <div class="container">
+            <header class="page-title-section">
+                <div class="logo-text">DianaMik</div>
+                <h1>Hospital Management Consultancy LLP</h1>
+                <p>NABH Projects Portfolio - 2025 Latest Update</p>
+            </header>
+
+            <section class="filter-box">
+                <div class="filter-group">
+                    <input type="text" id="searchBar" placeholder="Search Hospital, Doctor, or Area...">
+                </div>
+                <div class="filter-group">
+                    <select id="statusFilter">
+                        <option value="all">All Statuses</option>
+                        <option value="Completed">Completed</option>
+                        <option value="In Process">In Process</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="cityFilter">
+                        <option value="all">All Cities/Areas</option>
+                    </select>
+                </div>
+            </section>
+
+            <div class="stats" id="statsCounter">
+                Showing <span id="count">0</span> Hospitals
+            </div>
+
+            <div class="table-wrapper">
+                <table id="projectTable">
+                    <thead>
+                        <tr>
+                            <th>SR.</th>
+                            <th>Hospital Name</th>
+                            <th>Address</th>
+                            <th>Owner</th>
+                            <th>Project Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/about/data.js"></script>
+    <script src="/about/hospitals.js"></script>
+    <script src="/js/include.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
