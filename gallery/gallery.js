@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryGrid = document.getElementById("gallery-grid");
 
   const totalImages = 39;
-  const images = Array.from({ length: totalImages }, (_, i) => `/gallery/images/image${i + 1}.jpg`);
-
-  // Generate images
+  const images = Array.from(
+    { length: totalImages },
+    (_, i) => `/gallery/images/image${i + 1}.jpg`
+  );
   images.forEach((src, index) => {
     const item = document.createElement("div");
     item.classList.add("masonry-item");
@@ -13,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     galleryGrid.appendChild(item);
   });
-
-  // Lightbox
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const closeBtn = document.querySelector(".close");

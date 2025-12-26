@@ -1,4 +1,3 @@
-/* ====== GALLERY SECTION ====== */
 .gallery-section {
   padding: 80px 0;
   background: #f9f9f9;
@@ -25,7 +24,6 @@
   margin-bottom: 10px;
 }
 
-/* ====== HORIZONTAL GALLERY GRID ====== */
 .masonry-grid {
   display: flex;
   flex-wrap: wrap;
@@ -35,7 +33,7 @@
 }
 
 .masonry-item {
-  flex: 0 1 calc(25% - 20px); /* 4 items per row on desktop */
+  flex: 0 1 calc(25% - 20px);
   position: relative;
   overflow: hidden;
   border-radius: 15px;
@@ -57,7 +55,6 @@
   filter: brightness(85%);
 }
 
-/* ====== Lightbox ====== */
 .lightbox {
   display: none;
   position: fixed;
@@ -95,25 +92,30 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* ====== Responsive Layout ====== */
 @media (max-width: 1200px) {
   .masonry-item {
-    flex: 0 1 calc(33.333% - 20px); /* 3 per row */
+    flex: 0 1 calc(33.333% - 20px);
   }
 }
 
 @media (max-width: 768px) {
   .masonry-item {
-    flex: 0 1 calc(50% - 20px); /* 2 per row */
+    flex: 0 1 calc(50% - 20px);
   }
 }
 
 @media (max-width: 500px) {
   .masonry-item {
-    flex: 0 1 100%; /* 1 per row */
+    flex: 0 1 100%;
   }
 }

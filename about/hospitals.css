@@ -9,22 +9,22 @@
     --text-dark: #1e293b;
 }
 
-/* FIX: Ensure body allows footer to stay at bottom without overlapping */
+
 body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     background-color: var(--bg-light);
     color: var(--text-dark);
     margin: 0;
-    padding: 0; /* Changed from 20px to 0 to prevent header/footer misalignment */
+    padding: 0; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* FIX: Content area grows to push footer down */
+
 .content-area {
     flex: 1 0 auto;
-    padding: 20px; /* Moves the 20px padding here instead of body */
+    padding: 20px; 
 }
 
 .container { 
@@ -33,7 +33,7 @@ body {
     width: 100%;
 }
 
-/* HEADER SECTION - Specific to the Hospitals page content */
+
 .page-title-section {
     text-align: center;
     margin-bottom: 30px;
@@ -43,7 +43,7 @@ body {
 
 .logo-text { font-weight: bold; font-size: 2rem; color: var(--primary); letter-spacing: 1px; }
 
-/* FILTER SECTION */
+
 .filter-box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -63,20 +63,20 @@ input, select {
     font-size: 1rem;
 }
 
-/* TABLE STYLES - Data from NABH Projects list [cite: 8, 9, 10, 11, 12] */
+
 .table-wrapper {
     background: white;
     border-radius: 12px;
     overflow-x: auto;
     box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-    margin-bottom: 40px; /* Added margin to prevent touching the footer */
+    margin-bottom: 40px; 
 }
 
 table { width: 100%; border-collapse: collapse; min-width: 800px; }
 th { background: var(--primary); color: white; padding: 15px; text-align: left; }
 td { padding: 15px; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
 
-/* STATUS TAGS - Based on project status [cite: 8, 9, 10, 11, 12] */
+
 .status-tag {
     padding: 6px 12px;
     border-radius: 20px;
@@ -90,15 +90,15 @@ td { padding: 15px; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
 
 .stats { font-weight: bold; margin-bottom: 10px; color: var(--primary); }
 
-/* FOOTER INJECTION FIX */
+
 #footer {
     flex-shrink: 0;
     width: 100%;
-    position: relative; /* Prevents overlap seen in screenshots */
+    position: relative; 
     z-index: 5;
 }
 
-/* MOBILE VIEW */
+
 @media (max-width: 768px) {
     th:nth-child(5), td:nth-child(5) { display: none; } 
     .filter-box { grid-template-columns: 1fr; }

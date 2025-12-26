@@ -5,7 +5,6 @@ const cityFilter = document.getElementById('cityFilter');
 const countSpan = document.getElementById('count');
 
 function init() {
-    // Populate City Filter
     const cities = [...new Set(hospitalData.map(h => h.address))].sort();
     cities.forEach(city => {
         const opt = document.createElement('option');

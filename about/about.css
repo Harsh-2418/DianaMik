@@ -1,9 +1,7 @@
-/* About Section */
 .about-section {
   background: linear-gradient(to right, #ffffff, #eaf3fa);
   padding: 100px 0;
-  color: #002147; /* navy blue tone matching your site */
-}
+  color: #002147; }
 
 .about-container {
   width: 85%;
@@ -28,8 +26,7 @@
 }
 
 .about-text h2 span {
-  color: #f36b21; /* orange tone from logo */
-}
+  color: #f36b21; }
 
 .about-text p {
   font-size: 1.1rem;
@@ -57,17 +54,12 @@
 }
 
 .about-section p {
-  text-align: justify;          /* Makes both left and right edges even */
-  text-justify: inter-word;     /* Adds spacing between words for balance */
-  line-height: 1.8;             /* Improves readability */
-  letter-spacing: 0.2px;        /* Slightly opens text for a cleaner look */
-  word-spacing: 1px;
+  text-align: justify;            text-justify: inter-word;       line-height: 1.8;               letter-spacing: 0.2px;          word-spacing: 1px;
   margin-bottom: 20px;
   color: #333;
 }
 
 
-/* Vision & Mission Section */
 .vision-mission-section {
   text-align: center;
   background: linear-gradient(to right, #ffffff, #eaf3fa);
@@ -83,8 +75,7 @@
 }
 
 .vision-mission-section h2 span {
-  color: #f36b21; /* orange accent */
-}
+  color: #f36b21; }
 
 .vision-mission-container {
   display: flex;
@@ -92,8 +83,7 @@
   align-items: stretch;
   gap: 30px;
   padding: 80px 0;
-  background: linear-gradient(to bottom, #f8fbff, #e9f3ff); /* subtle gradient for clarity */
-}
+  background: linear-gradient(to bottom, #f8fbff, #e9f3ff); }
 
 .vision-box,
 .mission-box,
@@ -108,7 +98,6 @@
   transition: all 0.3s ease;
 }
 
-/* Hover lift effect for clarity */
 .vision-box:hover,
 .mission-box:hover,
 .values-box:hover {
@@ -116,7 +105,6 @@
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
-/* Fix for icon and heading spacing */
 .vmv-icon {
   width: 65px;
   height: 65px;
@@ -152,13 +140,11 @@
   animation: blinkArrow 1.5s infinite;
 }
 
-/* Blinking arrow animation */
 @keyframes blinkArrow {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
 
-/* Responsive layout */
 @media (max-width: 992px) {
   .vision-mission-container {
     flex-direction: column;
@@ -172,7 +158,6 @@
 }
 
 
-/* --- Blinking Effect Keyframes --- */
 @keyframes blinkArrow {
   0%, 100% {
     opacity: 1;
@@ -184,7 +169,6 @@
   }
 }
 
-/* Common styling for icons */
 .vmv-icon {
   width: 60px;
   height: 60px;
@@ -196,7 +180,6 @@
   animation: fadeIn 1s ease-in-out;
 }
 
-/* Optional soft fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -204,10 +187,8 @@
 
 
 
-/* === GOOGLE REVIEWS SECTION === */
 .google-reviews-section {
-  background: linear-gradient(to right, #001a33, #002147); /* deep navy tone */
-  padding: 100px 0;
+  background: linear-gradient(to right, #001a33, #002147);   padding: 100px 0;
   text-align: center;
   color: #fff;
 }
@@ -244,7 +225,6 @@
   padding: 20px 0;
 }
 
-/* Elfsight override fixes */
 .reviews-widget .elfsight-app {
   background: transparent !important;
   box-shadow: none !important;
@@ -263,7 +243,6 @@
   bottom: -10px !important;
 }
 
-/* Mobile optimization */
 @media (max-width: 768px) {
   .google-reviews-section h2 {
     font-size: 2rem;
@@ -272,24 +251,18 @@
     width: 95%;
   }
 }
-/* Force image above and center it */
 .about-container {
-  flex-direction: column; /* Stack image on top, text below */
-  align-items: center; /* Center horizontally */
-  justify-content: center;
+  flex-direction: column;   align-items: center;   justify-content: center;
   text-align: center;
 }
 
-/* Center the about text below image */
 .about-text {
   text-align: justify;
   max-width: 900px;
 }
 
-/* Center and resize image properly */
 .about-image {
-  order: -1; /* Move image before text */
-  display: flex;
+  order: -1;   display: flex;
   justify-content: center;
   width: 100%;
   margin-bottom: 40px;
@@ -307,7 +280,6 @@
   transform: scale(1.05);
 }
 
-/* Responsive tweak */
 @media (max-width: 768px) {
   .about-image img {
     width: 85%;

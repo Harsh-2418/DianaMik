@@ -1,7 +1,4 @@
-// include.js — handles dynamic header/footer import + navbar initialization
-
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== Load HEADER =====
   const header = document.getElementById("header");
   if (header) {
     fetch("/header.html")
@@ -12,8 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((err) => console.error("Error loading header:", err));
   }
-
-  // ===== Load FOOTER =====
   const footer = document.getElementById("footer");
   if (footer) {
     fetch("/footer.html")
@@ -24,8 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.error("Error loading footer:", err));
   }
 });
-
-// ===== Initialize Navbar Logic =====
 function initNavbar() {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
@@ -35,22 +28,10 @@ function initNavbar() {
     console.warn("Navbar elements not found — skipping init.");
     return;
   }
-
-  // Toggle navbar open/close (hamburger)
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("show-menu");
     menuToggle.classList.toggle("active");
   });
-
-  // Close menu when link clicked (optional — uncomment if needed)
-  // navLinks.querySelectorAll("a").forEach((link) => {
-  //   link.addEventListener("click", () => {
-  //     navLinks.classList.remove("show-menu");
-  //     menuToggle.classList.remove("active");
-  //   });
-  // });
-
-  // Dropdowns for mobile
   dropdowns.forEach((drop) => {
     drop.addEventListener("click", (e) => {
       if (window.innerWidth <= 992) {

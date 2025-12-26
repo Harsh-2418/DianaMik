@@ -1,4 +1,3 @@
-/* --- Clients Section --- */
 .clients-section {
   padding: 80px 0;
   text-align: center;
@@ -19,7 +18,6 @@
   margin-bottom: 60px;
 }
 
-/* --- Columns Container --- */
 .clients-columns {
   display: flex;
   justify-content: center;
@@ -29,7 +27,6 @@
   overflow: hidden;
 }
 
-/* --- Each Column --- */
 .column {
   display: flex;
   flex-direction: column;
@@ -42,31 +39,27 @@
   animation: scroll-down 15s linear infinite;
 }
 
-/* --- Duplicate sets inside column for infinite scroll --- */
 .column > div {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-/* --- Image Styling --- */
 .column img {
   width: 150px;
-  height: auto;  
-  object-fit: contain; 
+  height: auto;
+  object-fit: contain;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 0px;
   transition: transform 0.3s ease;
 }
-
 
 .column img:hover {
   transform: scale(1.05);
 }
 
-/* --- Animation Keyframes --- */
 @keyframes scroll-up {
   0% {
     transform: translateY(0);
@@ -85,7 +78,6 @@
   }
 }
 
-/* --- Responsive --- */
 @media (max-width: 992px) {
   .clients-columns {
     gap: 30px;
@@ -159,7 +151,7 @@
   object-fit: cover;
   background: #fff;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 15px;
   transition: transform 0.3s ease;
 }
@@ -169,13 +161,21 @@
 }
 
 @keyframes scroll-up {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 @keyframes scroll-down {
-  0% { transform: translateY(-50%); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {

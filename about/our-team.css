@@ -1,10 +1,10 @@
 .dianamik-wrapper {
   width: 100%;
-  max-width: 1200px; /* Limits total width expansion */
+  max-width: 1200px; 
   margin: 0 auto;
   padding: 40px 10px;
   background: #ffffff;
-  overflow-x: auto; /* Still allows scroll if screen is tiny */
+  overflow-x: auto; 
 }
 
 .dianamik-tree, .dianamik-tree ul {
@@ -18,11 +18,11 @@
 
 .dianamik-tree ul { padding-top: 20px; }
 
-/* Connecting Lines - Desktop */
+
 .dianamik-tree li {
   text-align: center;
   position: relative;
-  padding: 20px 2px 0 2px; /* Reduced side padding to bring nodes closer */
+  padding: 20px 2px 0 2px; 
 }
 
 .dianamik-tree li::before, .dianamik-tree li::after {
@@ -49,7 +49,7 @@
   width: 0; height: 20px;
 }
 
-/* Node Styling - More Compact */
+
 .node {
   border: 1px solid #2c3e50;
   padding: 8px 4px;
@@ -57,9 +57,9 @@
   border-radius: 4px;
   background-color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-size: 11px; /* Smaller font for narrow width */
-  min-width: 85px;  /* Significantly reduced */
-  max-width: 120px; /* Keeps nodes tight */
+  font-size: 11px; 
+  min-width: 85px;  
+  max-width: 120px; 
   line-height: 1.2;
   transition: all 0.3s;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
@@ -79,7 +79,7 @@
   font-weight: 600;
 }
 
-/* Mobile Responsive Breakpoint */
+
 @media screen and (max-width: 1024px) {
   .dianamik-tree, .dianamik-tree ul {
     flex-direction: column;
@@ -94,7 +94,7 @@
   }
   .dianamik-tree ul {
     border-left: 2px solid #2c3e50;
-    margin-left: 20px; /* Creates a visual indent for hierarchy */
+    margin-left: 20px; 
     padding-top: 0;
     margin-top: 10px;
   }

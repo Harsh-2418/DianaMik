@@ -1,28 +1,25 @@
-/* === RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* === NAVBAR === */
-/* ===== Top Navbar ===== */
 .top-navbar {
-  background: #0E88C7;
-  color: #0E88C7;
+  background: #0e88c7;
+  color: #0e88c7;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  border-bottom: 2px solid #0E88C7;
+  border-bottom: 2px solid #0e88c7;
 }
 
 .top-container {
   max-width: 1200px;
-  background: #0E88C7;
+  background: #0e88c7;
   margin: 0 auto;
   padding: 6px 20px;
   display: flex;
-  justify-content: flex-end; /* Moves items to the right */
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -46,19 +43,18 @@
 }
 
 .separator {
-  color: #0E88C7;
+  color: #0e88c7;
   font-weight: 400;
 }
 
-/* Icon styling */
 .top-right i {
   color: #ff6600;
   font-size: 14px;
-  transform: scaleX(1); /* Fix mirrored icon */
+  transform: scaleX(1);
 }
 
 span a {
-  color: #fff; /* white text */
+  color: #fff;
   text-decoration: none;
   margin-left: 6px;
   transition: color 0.3s ease;
@@ -69,13 +65,10 @@ span a:hover {
 }
 
 span i {
-  color: #ffff !important; 
+  color: #ffff !important;
   margin-right: 1px !important;
 }
 
-
-/* ===== Main Navbar Adjustments ===== */
-/* ====== RESET & BASE ====== */
 * {
   margin: 0;
   padding: 0;
@@ -86,9 +79,8 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* ====== TOP BAR ====== */
 .top-bar {
-  background: #0E88C7;
+  background: #0e88c7;
   color: white;
   padding: 6px 0;
   text-align: center;
@@ -104,7 +96,6 @@ body {
   color: #ff6b00;
 }
 
-/* ====== NAVBAR ====== */
 .main-navbar {
   background: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -126,7 +117,6 @@ body {
   height: 60px;
 }
 
-/* ====== NAV LINKS ====== */
 .nav-links {
   display: flex;
   list-style: none;
@@ -139,7 +129,6 @@ body {
   position: relative;
 }
 
-/* ====== LINK ANIMATION ====== */
 .nav-links a {
   position: relative;
   display: inline-block;
@@ -153,7 +142,6 @@ body {
   z-index: 1;
 }
 
-/* Border animation (top and bottom lines) */
 .nav-links a::before,
 .nav-links a::after {
   content: "";
@@ -161,7 +149,7 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  background: #0E88C7;
+  background: #0e88c7;
   transform: scaleX(0);
   transition: 0.3s ease;
 }
@@ -176,7 +164,6 @@ body {
   transform-origin: right;
 }
 
-/* Hover animation */
 .nav-links a:hover {
   color: white;
 }
@@ -190,11 +177,10 @@ body {
 }
 
 .nav-links a:hover {
-  background-color: #0E88C7;
+  background-color: #0e88c7;
   border-radius: 4px;
 }
 
-/* ====== BUTTON ====== */
 .book-btn {
   background: #ff6b00;
   color: #fff !important;
@@ -207,7 +193,6 @@ body {
   background: #272b67;
 }
 
-/* ====== DROPDOWN / MEGA MENU ====== */
 .dropdown:hover .mega-menu {
   display: flex;
 }
@@ -245,10 +230,9 @@ body {
 }
 
 .mega-menu a:hover {
-  color: #0E88C7;
+  color: #0e88c7;
 }
 
-/* ====== HAMBURGER MENU ====== */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -266,7 +250,6 @@ body {
   border-radius: 2px;
 }
 
-/* ====== HAMBURGER TO CROSS ====== */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -277,7 +260,6 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* ====== RESPONSIVE ====== */
 @media (max-width: 992px) {
   .menu-toggle {
     display: flex;
@@ -310,7 +292,6 @@ body {
     padding: 12px 18px;
   }
 
-  /* DROPDOWN FIX FOR MOBILE */
   .mega-menu,
   .grid-2 {
     position: static;
@@ -337,17 +318,15 @@ body {
     float: right;
   }
 
-  /* Animation hover disabled on mobile for better UX */
   .nav-links a:hover {
     background-color: transparent;
-    color: #0E88C7;
+    color: #0e88c7;
   }
   .nav-links a::before,
   .nav-links a::after {
     display: none;
   }
 }
-/* ====== DROPDOWN MENU FIX ====== */
 .mega-menu {
   display: none;
   position: absolute;
@@ -357,7 +336,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   padding: 15px 20px;
   min-width: 240px;
-  border-top: 3px solid #0E88C7;
+  border-top: 3px solid #0e88c7;
   z-index: 999;
   flex-direction: column;
   opacity: 0;
@@ -365,14 +344,12 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-/* Slide + fade in dropdown on hover */
 .dropdown:hover .mega-menu {
   display: flex;
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Dropdown links styling */
 .mega-menu a {
   display: block;
   color: #272b67;
@@ -385,13 +362,11 @@ body {
   background: transparent;
 }
 
-/* Fix: no orange block behind text */
 .mega-menu a:hover {
-  color : #0E88C7;
+  color: #0e88c7;
   background: transparent !important;
 }
 
-/* ====== SEND INQUIRY BUTTON BLINK ====== */
 .book-btn {
   background: #ff6b00;
   color: #fff !important;
@@ -408,13 +383,13 @@ body {
     box-shadow: 0 0 10px #ff6b00;
   }
   50% {
-    background-color: #0E88C7;
-    box-shadow: 0 0 15px #0E88C7;
+    background-color: #0e88c7;
+    box-shadow: 0 0 15px #0e88c7;
   }
 }
 
 .book-btn:hover {
-  background: #0E88C7;
+  background: #0e88c7;
 }
 
 .hero {
@@ -425,7 +400,6 @@ body {
   z-index: 1;
 }
 
-/* Background video */
 .bg-video {
   position: absolute;
   top: 0;
@@ -436,7 +410,6 @@ body {
   z-index: 0;
 }
 
-/* Dark overlay */
 .overlay {
   position: absolute;
   top: 0;
@@ -447,7 +420,6 @@ body {
   z-index: 1;
 }
 
-/* Slides container */
 .hero-slider {
   position: relative;
   width: 100%;
@@ -455,7 +427,6 @@ body {
   z-index: 1;
 }
 
-/* Each Slide */
 .slide {
   position: absolute;
   top: 0;
@@ -474,7 +445,6 @@ body {
   visibility: visible;
 }
 
-/* Content in each slide */
 .hero-content {
   position: absolute;
   top: 50%;
@@ -530,7 +500,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .hero {
     height: 80vh;
@@ -546,7 +515,6 @@ body {
   }
 }
 
-/* ===== HERO NAVIGATION (ARROWS & DOTS) ===== */
 .nav-arrow {
   position: absolute;
   top: 50%;
@@ -575,7 +543,6 @@ body {
   right: 25px;
 }
 
-/* Dots under hero */
 .slider-dots {
   position: absolute;
   bottom: 25px;
@@ -599,7 +566,6 @@ body {
   background: #ff6b00;
 }
 
-/* Optional: fade-in animation for slide text */
 .slide.active .hero-content {
   animation: fadeInUp 1s ease forwards;
 }
@@ -615,7 +581,6 @@ body {
   }
 }
 
-/* Hero slide styling */
 .hero .slide {
   width: 100%;
   height: 100vh;
@@ -635,8 +600,6 @@ body {
   z-index: 99;
 }
 
-
-/* ===== About Section Styles ===== */
 .about-section {
   padding: 100px 8%;
   background-color: #f8faff;
@@ -669,7 +632,7 @@ body {
 }
 
 .about-content h2 {
-  color: #003366; /* match logo blue tone */
+  color: #003366;
   font-size: 2rem;
   margin-bottom: 20px;
   font-weight: 700;
@@ -683,7 +646,6 @@ body {
   font-size: 1.05rem;
 }
 
-/* ===== Reveal Animation ===== */
 .reveal-left,
 .reveal-right {
   opacity: 0;
@@ -725,7 +687,6 @@ body {
   }
 }
 
-/* Responsive */
 @media (max-width: 992px) {
   .about-container {
     flex-direction: column;
@@ -734,7 +695,6 @@ body {
     text-align: center;
   }
 }
-/* Add smooth transition & stagger feel */
 .reveal-left,
 .reveal-right {
   opacity: 0;
@@ -753,7 +713,6 @@ body {
   transform: translateX(0);
   animation: slideInRight 1s ease forwards;
 }
-/* ===== Read More Button & Toggle ===== */
 .more-text {
   max-height: 0;
   overflow: hidden;
@@ -762,7 +721,7 @@ body {
 }
 
 .more-text.open {
-  max-height: 1000px; /* large enough to fit content */
+  max-height: 1000px;
   opacity: 1;
 }
 
@@ -782,7 +741,6 @@ body {
   background-color: #0055aa;
 }
 
-/* Better line arrangement and clean paragraph flow */
 .about-content p {
   text-align: justify;
   text-justify: inter-word;
@@ -793,16 +751,12 @@ body {
   color: #333;
 }
 
-
-
-/* ===== Our Expertises Section ===== */
 .expertise-section {
   background-color: #ffffff;
   padding: 100px 8%;
   text-align: center;
 }
 
-/* ===== Our Expertises Section ===== */
 .expertise-section {
   background-color: #ffffff;
   padding: 100px 8%;
@@ -860,7 +814,7 @@ body {
   color: #444;
   font-size: 1rem;
   line-height: 1.6;
-} /* Reveal Animation */
+}
 .reveal-left,
 .reveal-right {
   opacity: 0;
@@ -896,7 +850,7 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
-} /* Responsive */
+}
 @media (max-width: 992px) {
   .expertise-header h2 {
     font-size: 2rem;
@@ -905,7 +859,6 @@ body {
     gap: 25px;
   }
 }
-/* ============================= */ /* OUR EXPERTISE SECTION STYLING */ /* ============================= */
 .expertise-section {
   background: #fff;
   font-family: "Poppins", sans-serif;
@@ -926,7 +879,8 @@ body {
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.2;
     transform: translateY(0);
   }
@@ -935,7 +889,6 @@ body {
     transform: translateY(8px);
   }
 }
-
 
 .expertise-header h2 {
   font-size: 2.8rem;
@@ -976,20 +929,20 @@ body {
 }
 .expertise-image {
   width: 100%;
-  height: 250px; /* increased height */
+  height: 250px;
   overflow: hidden;
   border-radius: 15px;
   margin-bottom: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff; /* keeps logo background clean */
+  background: #fff;
 }
 
 .expertise-image img {
   max-width: 90%;
   max-height: 90%;
-  object-fit: contain; /* ensures full logo visibility */
+  object-fit: contain;
   display: block;
 }
 
@@ -1019,7 +972,7 @@ body {
 .read-more:hover {
   background: #2663eb;
   transform: translateY(-2px);
-} /* Scroll Animation */
+}
 [data-animate] {
   opacity: 0;
   transform: translateY(40px);
@@ -1030,7 +983,6 @@ body {
   transform: translateY(0);
 }
 
-/*----stats section----*/
 .stats-section {
   position: relative;
   background: none;
@@ -1055,7 +1007,6 @@ body {
   z-index: 2;
 }
 
-/* ✅ Make 3 boxes per row */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1066,14 +1017,13 @@ body {
   margin: 0 auto;
 }
 
-/* ✅ Equal box size for all */
 .stat-box {
   background: linear-gradient(135deg, #2663eb, #ff7a00);
-  width: 320px; /* same width */
-  height: 180px; /* same height */
+  width: 320px;
+  height: 180px;
   padding: 30px;
   border-radius: 10px;
-  display: flex; /* center content */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -1106,7 +1056,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* ✅ Responsive design */
 @media (max-width: 1024px) {
   .stat-box {
     width: 280px;
@@ -1145,10 +1094,8 @@ body {
   }
 }
 
-
-/* === GOOGLE REVIEWS SECTION === */
 .google-reviews-section {
-  background: linear-gradient(to right, #001a33, #002147); /* deep navy tone */
+  background: linear-gradient(to right, #001a33, #002147);
   padding: 100px 0;
   text-align: center;
   color: #fff;
@@ -1186,7 +1133,6 @@ body {
   padding: 20px 0;
 }
 
-/* Elfsight override fixes */
 .reviews-widget .elfsight-app {
   background: transparent !important;
   box-shadow: none !important;
@@ -1205,7 +1151,6 @@ body {
   bottom: -10px !important;
 }
 
-/* Mobile optimization */
 @media (max-width: 768px) {
   .google-reviews-section h2 {
     font-size: 2rem;
@@ -1215,13 +1160,6 @@ body {
   }
 }
 
-
-
-/*=====why choose us=====*/
-/* Why Choose Us Section */
-/* ================================
-   WHY CHOOSE US SECTION
-================================ */
 .why-choose-us {
   background: linear-gradient(180deg, #f2f6ff 0%, #ffffff 100%);
   padding: 80px 0;
@@ -1242,7 +1180,7 @@ body {
   content: "";
   width: 90px;
   height: 4px;
-  background: #ff6b00; /* orange accent from expertise section */
+  background: #ff6b00;
   display: block;
   margin: 12px auto 0;
   border-radius: 2px;
@@ -1280,21 +1218,18 @@ body {
   line-height: 1.6;
 }
 
-/* Hover - same as Expertise style */
 .choose-box:hover {
   transform: translateY(-8px);
-  border-top-color: #ff6b00; /* orange border */
-  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.25); /* orange glow */
+  border-top-color: #ff6b00;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.25);
 }
 
-/* Scroll Animation */
 .choose-box.visible {
   opacity: 1;
   transform: translateY(0);
   transition: all 0.6s ease-out;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .choose-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1313,7 +1248,6 @@ body {
   }
 }
 
-/* ========== CLIENTS SECTION ========== */
 .clients-section {
   text-align: center;
   padding: 80px 0;
@@ -1359,10 +1293,10 @@ body {
 
 .client-box {
   flex: 0 0 auto;
-  background: white; /* no white background */
-  border-radius: 0; /* no rounded corners */
-  box-shadow: none; /* remove shadow “border” */
-  padding: 10px 20px; /* slightly smaller padding for balance */
+  background: white;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 10px 20px;
   transition: transform 0.3s ease;
 }
 
@@ -1376,7 +1310,6 @@ body {
   opacity: 0.9;
 }
 
-/* Animation for right-to-left scroll */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -1386,7 +1319,6 @@ body {
   }
 }
 
-/* Responsive tweaks */
 @media (max-width: 768px) {
   .scroll-track {
     gap: 30px;
@@ -1394,7 +1326,6 @@ body {
   }
 }
 
-/*==========BLOGS SECTION==========*/
 .blogs {
   padding: 100px 0;
   text-align: center;
@@ -1423,11 +1354,11 @@ body {
 
 .blogs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); /* wider cards */
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 2rem;
   justify-content: center;
   align-items: stretch;
-  max-width: 1400px; /* allows more space */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
 }
@@ -1443,13 +1374,13 @@ body {
 
 .blog-card:hover {
   transform: translateY(-10px);
-  border-top: 4px solid #f15a24; /* same color as expertise hover */
+  border-top: 4px solid #f15a24;
   box-shadow: 0 10px 25px rgba(255, 107, 0, 0.25);
 }
 
 .blog-card img {
   width: 100%;
-  height: 280px; /* increased height */
+  height: 280px;
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -1468,7 +1399,7 @@ body {
 }
 
 .blog-card:hover .blog-content h3 {
-  color: #002b5b; /* dark blue on hover */
+  color: #002b5b;
 }
 
 .blog-content p {
@@ -1489,7 +1420,6 @@ body {
   background: #0056ff;
   color: #fff;
 }
-/* ==== READ MORE BUTTON ==== */
 .read-more-btn-container {
   text-align: center;
   margin-top: 40px;
@@ -1497,8 +1427,8 @@ body {
 
 .read-more-btn {
   display: inline-block;
-  background: #ff6600; /* Orange */
-  color: #000; /* Black text */
+  background: #ff6600;
+  color: #000;
   padding: 12px 35px;
   font-size: 16px;
   font-weight: 600;
@@ -1508,11 +1438,10 @@ body {
 }
 
 .read-more-btn:hover {
-  background: #0056ff; /* Sky blue */
+  background: #0056ff;
   color: #fff;
   transform: translateY(-3px);
 }
-/* ==== CONTACT SECTION ==== */
 .contact-section {
   background-color: #f8fafc;
   padding: 80px 0;
@@ -1609,7 +1538,6 @@ textarea:focus {
   background-color: #0056ff;
 }
 
-/* Contact Info Section */
 .contact-info {
   background: #fff;
   padding: 30px;
@@ -1635,8 +1563,8 @@ textarea:focus {
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  background-color: #e6f2ff; /* light blue background */
-  color: #ff6600; /* orange icon */
+  background-color: #e6f2ff;
+  color: #ff6600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1646,7 +1574,7 @@ textarea:focus {
 }
 
 .info-box:hover .icon {
-  color: #fff; /* white icon */
+  color: #fff;
   transform: scale(1.1);
 }
 
@@ -1668,7 +1596,6 @@ textarea:focus {
   border-radius: 10px;
   overflow: hidden;
 }
-/* ==========FOOTER==========*/
 .footer {
   background-color: #0d3c66;
   color: #f1f1f1;
@@ -1709,7 +1636,7 @@ textarea:focus {
 
 .footer-contact .fa-phone-alt {
   transform: scaleX(-1);
-  display: inline-block; /* ensures transform applies properly */
+  display: inline-block;
 }
 
 .social-icons a:hover {
@@ -1770,9 +1697,9 @@ textarea:focus {
 }
 
 .footer-services ul li {
-  white-space: nowrap; /* Keeps each item on one line */
-  overflow: hidden; /* Hides overflow text if needed */
-  text-overflow: ellipsis; /* Adds ... if text is too long */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 992px) {
@@ -1796,7 +1723,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #0b1a33; /* same as footer */
+  background-color: #0b1a33;
 }
 
 footer {
@@ -1821,12 +1748,11 @@ body > *:last-child {
   content: "";
   width: 90px;
   height: 4px;
-  background: #ff6600; /* same orange */
+  background: #ff6600;
   display: block;
   margin: 12px auto 0;
   border-radius: 2px;
 }
-/* Remove unwanted bottom spacing */
 body,
 html {
   margin: 0;
@@ -1834,18 +1760,15 @@ html {
   overflow-x: hidden;
 }
 
-/* Make sure footer sits flush to bottom */
 footer {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* Optional: remove extra space below contact section */
 .contact-section {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
-/* WhatsApp Floating Button */
 .whatsapp-float {
   position: fixed;
   width: 55px;
@@ -1870,14 +1793,13 @@ footer {
   background-color: #128c7e;
   transform: scale(1.1);
 }
-/* ======== Preloader ======== */
 #preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff; /* match site background */
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1886,12 +1808,11 @@ footer {
 }
 
 #preloader img {
-  width: 120px; /* adjust logo size */
+  width: 120px;
   height: auto;
   animation: popup 1.4s ease-in-out infinite;
 }
 
-/* ======== Pop-up Down Animation ======== */
 @keyframes popup {
   0%,
   100% {
@@ -1902,18 +1823,14 @@ footer {
   }
 }
 
-/* Fade out after load */
 #preloader.hidden {
   opacity: 0;
   visibility: hidden;
 }
-/* === Improve Hero Text Visibility === */
 .hero-content h1,
 .hero-content p {
   color: #ffffff !important;
-  text-shadow: 
-    0 0 12px rgba(0, 0, 0, 1),
-    0 0 20px rgba(0, 0, 0, 0.9),
+  text-shadow: 0 0 12px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 0.9),
     0 2px 10px rgba(0, 0, 0, 1) !important;
 }
 
@@ -1921,19 +1838,15 @@ footer {
   filter: brightness(1.2);
 }
 
-/* Stronger overlay for better contrast */
 .overlay {
   background: rgba(0, 0, 0, 0.55) !important;
 }
-/* -------- FIX HERO TEXT VISIBILITY COMPLETELY -------- */
 
-/* Remove brightness fade from slides */
 .hero .slide,
 .slide {
   opacity: 1 !important;
 }
 
-/* Add a strong dark overlay on each slide */
 .slide::before {
   content: "";
   position: absolute;
@@ -1941,22 +1854,18 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.55) !important;  /* adjust 0.55 → 0.6 or 0.65 if needed */
+  background: rgba(0, 0, 0, 0.55) !important;
   z-index: 1;
 }
 
-/* Raise hero text above overlay */
 .hero-content {
   position: relative;
   z-index: 5 !important;
 }
 
-/* Make text brighter, crisp & punchy */
 .hero-content h1,
 .hero-content p {
   color: #ffffff !important;
-  text-shadow:
-    0 0 10px rgba(0,0,0,1),
-    0 0 18px rgba(0,0,0,0.9),
-    0 2px 8px rgba(0,0,0,1) !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 18px rgba(0, 0, 0, 0.9),
+    0 2px 8px rgba(0, 0, 0, 1) !important;
 }

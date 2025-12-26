@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== HERO SLIDER WITH CONTROLS =====
   {
     const slides = document.querySelectorAll(".hero .slide");
     const dotsContainer = document.querySelector(".slider-dots");
@@ -67,8 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
       startAutoSlide();
     }
   }
-
-  // ===== SCROLL ANIMATION (first + second version merged safely) =====
   function handleScrollAnimations() {
     const triggerBottom = window.innerHeight * 0.85;
     const reveals = document.querySelectorAll(".reveal-left, .reveal-right");
@@ -89,8 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", handleScrollAnimations);
   handleScrollAnimations();
-
-  // ===== READ MORE TOGGLE =====
   const readMoreBtn = document.querySelector(".read-more-btn");
   const moreText = document.querySelector(".more-text");
 
@@ -102,8 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
         : "Read More";
     });
   }
-
-  // ===== SMOOTH SCROLLING =====
   const navLinkItems = document.querySelectorAll("a[href^='#']");
   navLinkItems.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -120,8 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  // ===== Expertise Section Animation =====
   if (document.querySelector("[data-animate]")) {
     const cards = document.querySelectorAll("[data-animate]");
     const observer = new IntersectionObserver(
@@ -138,8 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     cards.forEach((card) => observer.observe(card));
   }
-
-  // ===== UPDATED STATS COUNTER LOGIC =====
   if (document.querySelector("#stats")) {
     const counters = document.querySelectorAll(".counter");
     const section = document.querySelector("#stats");
@@ -150,15 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       counters.forEach((counter) => {
         const target = +counter.getAttribute("data-target");
-        
-        // Determine frames if running at 30ms intervals
         const minInterval = 30;
         const totalFrames = totalDuration / minInterval;
 
         let stepTime, increment;
-
-        // If target is small (e.g., 8), we can't increment by less than 1.
-        // So we slow down the timer instead.
         if (target < totalFrames) {
           stepTime = totalDuration / target; // Slower tick for small numbers
           increment = 1;
@@ -169,31 +153,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const updateCount = () => {
           const current = +counter.innerText;
-          
+
           if (current < target) {
             const next = current + increment;
             counter.innerText = next > target ? target : next;
-            // Use the dynamic stepTime
             setTimeout(updateCount, stepTime);
           } else {
             counter.innerText = target;
           }
         };
-        
+
         updateCount();
       });
     };
 
     window.addEventListener("scroll", () => {
-      // Logic: If section is visible
       const sectionTop = section.offsetTop - window.innerHeight + 200;
       if (!triggered && window.scrollY > sectionTop) {
         animateCounters();
         triggered = true;
       }
     });
-
-    // Also try to trigger if already in view on load
     window.addEventListener("load", () => {
       const sectionTop = section.offsetTop - window.innerHeight + 200;
       if (!triggered && window.scrollY > sectionTop) {
@@ -202,8 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  // ===== WHY CHOOSE US =====
   const chooseBoxes = document.querySelectorAll(".choose-box");
   const revealChoose = () => {
     chooseBoxes.forEach((box, index) => {
@@ -215,8 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   window.addEventListener("scroll", revealChoose);
   revealChoose();
-
-  // ===== CLIENTS SECTION =====
   const slider = document.querySelector(".clients-slider");
   const track = document.querySelector(".clients-track");
   if (slider && track) {
@@ -227,8 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
       track.style.animationPlayState = "running";
     });
   }
-
-  // ===== BLOGS SECTION =====
   const blogCards = document.querySelectorAll(".blog-card");
   function revealBlogs() {
     blogCards.forEach((card) => {
